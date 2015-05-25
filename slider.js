@@ -19,7 +19,7 @@ function init() {
         imageWidth = document.getElementsByClassName("slide_img")[0];
         imageWidth = window.getComputedStyle(imageWidth);
         imageWidth = parseInt(imageWidth.getPropertyValue("width"));
-        console.log(imageWidth);
+        // console.log(imageWidth);
     }
     ul.style.width = parseInt(imageWidth * imageNumber) + "px";
     
