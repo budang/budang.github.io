@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Welcome to Brandon</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <!--<script src="background.js"></script>-->
+    <!--<script src="interact.min.js"></script>-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://code.interactjs.io/interact-1.2.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/2.3.0/phaser.min.js"></script>
+    <!--<script src="animate.js"></script>-->
+    <!--<script src="bomber.js"></script>-->
+    <script src="slider.js"></script>
+    <script src="window.js"></script>
+
+</head>
+
+<body>
+
+    <div id="desktop">
+        <div id="sidebar" class="desktop">
+            <div class="square" id="home"><img src="http://cdn.flaticon.com/png/256/60535.png" alt="home"/></div>
+            <div class="square" id="internet"><img src="http://cdn.flaticon.com/png/256/69020.png" alt="internet"/></div>
+            <div class="square" id="pictures"><img src="http://cdn.flaticon.com/png/256/4424.png" alt="pictures"/></div>
+            <div class="square" id="videos"><img src="http://cdn.flaticon.com/png/256/18242.png" alt="videos"/></div>
+            <div class="square" id="game"><img src="http://cdn.flaticon.com/png/256/68802.png" alt="game"/></div>
+            <div class="square" id="folder"><img src="http://cdn.flaticon.com/png/256/69925.png" alt="folder"/></div>        
+        </div>
+	    <div id="background" class="desktop">
+	        <div id="internet_window" class="resize-drag window"></div>
+            <div id="pic_window" class="resize-drag window slider_wrapper">
+                <ul id="image_slider">
+                    <li><img src="https://raw.githubusercontent.com/budang/budang.github.io/master/assets/zoo.jpg" class="slide_img" alt="img"></li>
+                    <!--<li><iframe width="420" height="300" src="https://www.facebook.com/video.php?v=955795694434442&l=5710636047910121991"></iframe>-->
+                    <li><img src="https://raw.githubusercontent.com/budang/budang.github.io/master/assets/catv.jpg" class="slide_img" alt="img"></li>
+                    <li><img src="https://raw.githubusercontent.com/budang/budang.github.io/master/assets/iceskate.jpg" class="slide_img" alt="img"></li>
+                    <li><img src="https://raw.githubusercontent.com/budang/budang.github.io/master/assets/sfdragon.jpg" class="slide_img" alt="img"></li>
+                    <li><img src="https://raw.githubusercontent.com/budang/budang.github.io/master/assets/chauma.jpg" class="slide_img" alt="img"></li>
+                    <li><img src="https://raw.githubusercontent.com/budang/budang.github.io/master/assets/sflion.jpg" class="slide_img" alt="img"></li>
+                    <li><img src="https://raw.githubusercontent.com/budang/budang.github.io/master/assets/lunch.jpg" class="slide_img" alt="img"></li>
+                    <li><img src="https://raw.githubusercontent.com/budang/budang.github.io/master/assets/zilker.jpg" class="slide_img" alt="img"></li>
+                    <li><img src="https://raw.githubusercontent.com/budang/budang.github.io/master/assets/sfteam.jpg" class="slide_img" alt="img"></li>
+                    <li><img src="https://raw.githubusercontent.com/budang/budang.github.io/master/assets/sshd.jpg" class="slide_img" alt="img"></li>                
+                    <li><img src="https://raw.githubusercontent.com/budang/budang.github.io/master/assets/miranda.jpg" class="slide_img" alt="img"></li>                
+                    <li><img src="https://raw.githubusercontent.com/budang/budang.github.io/master/assets/connie.jpg" class="slide_img" alt="img"></li>
+                    <li><img src="https://raw.githubusercontent.com/budang/budang.github.io/master/assets/jong.jpg" class="slide_img" alt="img"></li>
+                    <!--<li><img src="https://raw.githubusercontent.com/budang/budang.github.io/master/assets/raider" class="slide_img" alt="img"></li>-->
+                </ul>
+                <span class="nvgt" id="prev"></span>
+                <span class="nvgt" id="next"></span>
+            </div>
+            <div id="vid_window" class="resize-drag window"></div>
+	        <div id="game_window" class="resize-drag window">
+	            <h1>bomberguy</h1>
+	            <div id="canvas"></div>
+                <p>Press space to drop bombs and arrow keys to move!<br>
+                &copy; Brandon Dang | Adan Briones | Jordan Torres</p>
+	        </div>
+            <div id="folder_window" class="resize-drag window"></div>
+	    </div>
+    </div>
+
+
+
+</body>
+
+
+</html>
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hello World from HTML by Koding</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="//koding.com/hello/css/style.css">
+<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body class="php">
+<div id="container">
+  <div id="main" role="main" class="hellobox">
+    <header><a href="http://koding.com">Koding.com</a></header>
+    <h1>Hello World!</h1>
+    <h2>From HTML
+    </h2>
+  </div>
+  <nav>
+    <ul>
+      <li><a class="active" href="index.html">HTML</a></li>
+      <li><a href="php.php">PHP</a></li>
+      <li><a href="python.py">Python</a></li>
+      <li><a href="perl.pl">Perl</a></li>
+      <li><a href="ruby.rb">Ruby</a></li>
+    </ul>
+  </nav>
+  <footer>
+    <h4>This is an example page running plain HTML on your Koding Virtual Machine (VM). This web page is being served by the apache web server. 
+    	<br>
+    	To learn more about how we have
+    	configured the apache, you should <a href="http://learn.koding.com/guides/where-is-my-webserver-root/" target=_blank>read this simple guide</a>.
+    	<p>
+    	You can create your own simple HTML/web page "Hello World" either by changing this file (index.html) or by adding a new file in the 
+    	"Web" directory found inside the home directory of your user account on the VM (/home/your_username/Web).
+    	<p>
+    		Also visit <a href="http://learn.koding.com" target=_blank>Koding University</a> for a ton of interesting content on how you can do amazing things with Koding!
+    	</p>
+    </h4>
+    <p><a href="https://twitter.com/koding" target=_blank>Koding on Twitter</a> | <a href="https://facebook.com/koding" target=_blank>Koding on Facebook</a></p>
+  </footer>
+</div>
+</body>
+</html>-->

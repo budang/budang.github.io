@@ -1,0 +1,162 @@
+body, div, h1, h2, h3, h4, h5, h6, p, ul, img
+{
+    margin: 0 0;
+    padding: 0;
+}
+
+body
+{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.desktop
+{
+    float: left;
+    height: 100vh;
+    position: absolute;
+}
+
+#background
+{
+    background-image: url("http://41.media.tumblr.com/3146e728478883505d6c0f98915a2c6f/tumblr_n9wadx3Boe1tij7i0o1_1280.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+    width: 100vw;
+}
+
+#sidebar
+{
+    background-color: DarkGreen;
+    opacity: 0.8;
+    width: 75px;
+    z-index: 1;
+}
+
+.square
+{
+    width: 65px;
+    height: 65px;
+    line-height: 65px;
+    text-align: center;
+    z-index: 2;
+    /*background-color: White;*/
+    /*opacity: 0.4;*/
+    background: rgba(255, 255, 255, 0.4);
+    margin: 5px 5px;
+    border-radius: 15px;
+}
+
+.square:hover {
+    opacity: 0.7;
+}
+
+.square img
+{
+    width: 75%;
+    vertical-align: middle;
+}
+
+.window
+{
+    display: none;
+}
+
+/*canvas*/
+/*{*/
+/*    margin: auto auto;*/
+    /*position: absolute;*/
+    /*left: 0; right: 0; top: 110px;*/
+/*}*/
+
+#game_window
+{
+    height: 620px;
+    width: 800px;
+    background-color: Red;
+    z-index: 5;
+}
+
+canvas {
+    margin: auto auto;
+    position: relative;
+    top: 0px;
+}
+h1, p {
+    color: White;
+    text-align: center;
+}
+h1 {
+    font-size: 80px;
+    /*margin-top: 20px*/
+}
+p {
+    font-size: 24px;
+    /*top: 580px; right: 0; left: 0;*/
+    /*position: relative;*/
+}
+
+/*slider*/
+/*slider/pictures*/
+.slider_wrapper {
+    overflow: hidden;
+    
+    height: 300px;
+    width: 420px;
+    position: relative;
+    top: auto;
+
+    /*background-image: url("assets/hacktx_clemens.jpg");*/
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#image_slider {
+    list-style: none;
+    
+    position: relative;
+    height: auto;
+    
+    overflow: hidden;
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+
+#image_slider li {
+    position: relative;
+    float: left;
+}
+
+.slide_img {
+    height: 300px;
+    width: 420px;
+}
+
+/*next/prev buttons*/
+.nvgt {
+    position: absolute;
+    top: 35%;
+    height: 30%;
+    width: 30px;
+    opacity: 0.6;
+}
+
+.nvgt:hover {
+    opacity: 0.9;
+}
+
+#prev {
+    background: #000 url('https://dl.dropboxusercontent.com/u/65639888/image/prev.png') no-repeat center;
+    left: 0;
+}
+
+#next {
+    background: #000 url('https://dl.dropboxusercontent.com/u/65639888/image/next.png') no-repeat center;
+    right: 0;
+}
