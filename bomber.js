@@ -338,7 +338,7 @@ function turn() {
 }
 
 function endGame(status) {
-    game.gamePaused();
+    game.paused = true;
     var text = this.game.add.text(game.camera.wisth / 2, game.camera.height / 2, "", {
         font: "129px Arial",
         fill: "#ffffff",
@@ -351,7 +351,9 @@ function endGame(status) {
         text.setText("Game Over");        
     }
     setTimeout(function() {
-        window.location.reload();
+        text.setText("");
+        create();
+        game.paused = false;
     }, 2500);
 }
 
