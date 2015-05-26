@@ -71,6 +71,11 @@ body
     margin: 2px 3px;
     float: right;
     /*color: White;*/
+}
+
+.topbar a
+{
+    color: White;
     text-decoration: none;
 }
 
@@ -84,7 +89,7 @@ body
 #game_window
 {
     height: 630px;
-    width: 800px;
+    width: 750px;
     background-color: Red;
     z-index: 5;
 }
