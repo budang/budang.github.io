@@ -1,9 +1,6 @@
-alert(1);
 var game = new Phaser.Game(672, 480, Phaser.AUTO, 'canvas',
     {preload: preload, create: create, update: update, move: move,
     checkKeys: checkKeys, checkDirection: checkDirection, turn: turn});
-
-var assets = "https://raw.githubusercontent.com/budang/budang.github.io/master/bomberguy/assets";
 
 var bombs;
 var map = null;
@@ -28,12 +25,12 @@ var baddieCounter = 5;
 
 // note: graphics copyright 2015 Photon Storm Ltd
 function preload() {
-    game.load.tilemap('map', 'map.json', null, Phaser.Tilemap.TILED_JSON);
-    game.load.image('tiles', assets + '/tiles.png');
-    this.load.image('bomb', assets + '/bomb.png');
-    game.load.spritesheet('baddie',assets + '/baddie.png', 32,32);
-    game.load.spritesheet('dude', assets + '/dude.png', 32, 48);
-    game.load.spritesheet('explosion', assets + '/explosion17.png', 64, 64);
+    game.load.tilemap('map', 'assets/map.json', null, Phaser.Tilemap.TILED_JSON);
+    game.load.image('tiles', 'assets/tiles.png');
+    this.load.image('bomb', 'assets/bomb.png');
+    game.load.spritesheet('baddie', 'assets/baddie.png', 32,32);
+    game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
+    game.load.spritesheet('explosion', 'assets/explosion17.png', 64, 64);
 }
 
 function create() {
