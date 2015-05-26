@@ -12,14 +12,12 @@ function init() {
     li_items = ul.children;
     imageNumber = li_items.length;
     imageWidth = li_items[0].children[0].clientWidth;
-    // console.log(li_items[0].children[0]);
-    // console.log(li_items[0].children[0].clientWidth);
+    
     if(imageWidth === 0) {
         // imageWidth = 420;
         imageWidth = document.getElementsByClassName("slide_img")[0];
         imageWidth = window.getComputedStyle(imageWidth);
         imageWidth = parseInt(imageWidth.getPropertyValue("width"));
-        // console.log(imageWidth);
     }
     ul.style.width = parseInt(imageWidth * imageNumber) + "px";
     

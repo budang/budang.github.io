@@ -33,6 +33,8 @@ openWindow = function(divID) {
     // }
     if(divID === "pic_window") {
         $("#image_slider").css({"width": "5460px"});
+    } else if(divID === "game_window") {
+        // $.getScript("bomber.js");
     }
     
     $("#" + divID).css({"display": "block"});

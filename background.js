@@ -5,10 +5,10 @@ window.onload = function() {
     // alert(a);
     
     if(rand === 0) {
-        background.style.backgroundImage = "url('https://40.media.tumblr.com/f9fedb19bd5ebe1869e0814fa7de85a8/tumblr_nomavpWFYK1tij7i0o1_540.jpg')";
+        background.style.backgroundImage = "url('http://41.media.tumblr.com/01f2334e1769cc2ce66d01b7e3084048/tumblr_n7akjqf0QS1qea8eeo2_1280.jpg')";
         sidebar.style.backgroundColor = "MidnightBlue";
     } else if(rand === 1) {
-        background.style.backgroundImage = "url('https://36.media.tumblr.com/2681434e0e532865decb771520686797/tumblr_n9wg0jrfkq1tij7i0o1_1280.jpg')";
+        background.style.backgroundImage = "url('http://40.media.tumblr.com/af5a13af665a7051d6ea4403a17b8c21/tumblr_ms97uc3EV01qea8eeo2_1280.jpg')";
         sidebar.style.backgroundColor = "Tan";
     } // else do nothing
 }

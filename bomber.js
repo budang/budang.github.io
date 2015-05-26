@@ -1,10 +1,9 @@
-window.onload = function() {
-    
-var game = new Phaser.Game(672, 480, Phaser.AUTO, 'canv',
+alert(1);
+var game = new Phaser.Game(672, 480, Phaser.AUTO, 'canvas',
     {preload: preload, create: create, update: update, move: move,
     checkKeys: checkKeys, checkDirection: checkDirection, turn: turn});
 
-var assets = "https://github.com/budang/budang.github.io/tree/master/bomberguy/assets";
+var assets = "https://raw.githubusercontent.com/budang/budang.github.io/master/bomberguy/assets";
 
 var bombs;
 var map = null;
@@ -28,7 +27,7 @@ var spaceKey = null;
 var baddieCounter = 5;
 
 // note: graphics copyright 2015 Photon Storm Ltd
-function preload() {    
+function preload() {
     game.load.tilemap('map', 'map.json', null, Phaser.Tilemap.TILED_JSON);
     game.load.image('tiles', assets + '/tiles.png');
     this.load.image('bomb', assets + '/bomb.png');
@@ -59,7 +58,7 @@ function create() {
     Zombie4.animations.play('right');
     Zombie5.animations.play('right');
  
-    player = game.add.sprite(48, 48, 'dude', 4);enable
+    player = game.add.sprite(48, 48, 'dude', 4);
     player.animations.add('left', [0, 1, 2, 3], 10, true);
     player.animations.add('right', [5, 6, 7, 8], 10, true);
     player.anchor.set(0.5);
@@ -383,5 +382,3 @@ function checkFallout(sprite) {
         }
     }
 }
-
-};
