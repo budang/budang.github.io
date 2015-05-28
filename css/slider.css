@@ -1,0 +1,63 @@
+.slider_wrapper
+{
+    overflow: hidden;
+    height: 300px;
+    width: 420px;
+    position: relative;
+    top: auto;
+    /*background-image: url("assets/hacktx_clemens.jpg");*/
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#image_slider
+{
+    list-style: none;
+    position: relative;
+    height: auto;
+    overflow: hidden;
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+
+#image_slider li
+{
+    position: relative;
+    float: left;
+}
+
+.slide_img
+{
+    height: 300px;
+    width: 420px;
+}
+
+.nvgt
+{
+    position: absolute;
+    top: 35%;
+    height: 30%;
+    width: 30px;
+    opacity: 0.6;
+}
+
+.nvgt:hover
+{
+    opacity: 0.9;
+}
+
+#prev
+{
+    background: #000 url('https://dl.dropboxusercontent.com/u/65639888/image/prev.png') no-repeat center;
+    left: 0;
+}
+
+#next
+{
+    background: #000 url('https://dl.dropboxusercontent.com/u/65639888/image/next.png') no-repeat center;
+    right: 0;
+}

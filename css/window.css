@@ -1,0 +1,46 @@
+.window
+{
+    display: none;
+}
+
+.topbar
+{
+    /*text-align: right;*/
+    /*margin: 2px 3px;*/
+    /*float: right;*/
+    /*color: White;*/
+    background-color: Red;
+    width: 100%;
+}
+
+.topbar a
+{
+    /*margin: 2px 3px;*/
+    /*text-align: right;*/
+    margin: 2px 3px 2px 0;
+    float: right;
+    color: White;
+    text-decoration: none;
+    /*background-color: Red;*/
+}
+
+.topbar a.hover
+{
+    opacity: 0.1;
+}
+
+#game_window
+{
+    height: 630px;
+    width: 750px;
+    background-color: Red;
+    z-index: 5;
+}
+
+#pic_window
+{
+    height: 340px;
+    width: 420px;
+    background-color: Red;
+    z-index: 5;
+}
