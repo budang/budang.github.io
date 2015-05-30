@@ -21,13 +21,13 @@
     float: right;
     color: White;
     text-decoration: none;
-    /*background-color: Red;*/
+    background-color: Red;
 }
 
-.topbar a.hover
-{
-    opacity: 0.1;
-}
+/*.topbar a.hover*/
+/*{*/
+/*    opacity: 0.1;*/
+/*}*/
 
 #pic_window
 {
@@ -62,4 +62,31 @@ video
     z-index: 5;
     left: 200px;
     position: relative;
+}
+
+#folder_window
+{
+    height: 470px;
+    width: 620px;
+    background-color: White;
+    z-index: 5;
+    left: 200px;
+    position: relative;
+}
+
+#resume
+{
+    width: 80px;
+}
+
+img.file
+{
+    width: 75px;
+    height: 75px;
+}
+
+p.file
+{
+    color: Black;
+    font-size: 18px;
 }
