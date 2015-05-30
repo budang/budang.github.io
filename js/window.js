@@ -35,6 +35,6 @@ openWindow = function(divID) {
         $("#image_slider").css({"width": "5460px"});
     }
     
-    $("#" + divID).css({"display": "block"});
+    $("#" + divID).css({"display": "block", "border": "5px double Blue"});
     // $("#" + divID).css({"background-color": "Black"});
 }

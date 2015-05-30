@@ -9,8 +9,11 @@
     /*margin: 2px 3px;*/
     /*float: right;*/
     /*color: White;*/
-    background-color: Black;
+    background-color: Red;
     width: 100%;
+    /*border-bottom-style: double;*/
+    /*border-bottom-color: Blue;*/
+    /*border-bottom-width: 5px;*/
 }
 
 .topbar a
@@ -21,7 +24,7 @@
     float: right;
     color: White;
     text-decoration: none;
-    background-color: Red;
+    /*background-color: Red;*/
 }
 
 /*.topbar a.hover*/
