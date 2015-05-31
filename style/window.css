@@ -37,7 +37,7 @@
     height: 340px;
     width: 420px;
     background-color: Black;
-    z-index: 5;
+    /*z-index: 5;*/
 }
 
 video
@@ -52,9 +52,9 @@ video
     height: 470px;
     width: 620px;
     background-color: Black;
-    z-index: 5;
+    /*z-index: 5;*/
     left: 200px;
-    position: relative;
+    /*position: relative;*/
 }
 
 #game_window
@@ -62,9 +62,9 @@ video
     height: 630px;
     width: 750px;
     background-color: Black;
-    z-index: 5;
+    /*z-index: 5;*/
     left: 200px;
-    position: relative;
+    /*position: relative;*/
 }
 
 #folder_window
@@ -72,9 +72,9 @@ video
     height: 470px;
     width: 620px;
     background-color: White;
-    z-index: 5;
+    /*z-index: 5;*/
     left: 200px;
-    position: relative;
+    /*position: relative;*/
 }
 
 #resume
