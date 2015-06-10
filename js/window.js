@@ -1,3 +1,4 @@
+var wind = "";
 var zindex = 5;
 
 // opened
@@ -14,24 +15,48 @@ $(document).ready(function() {
     $(".square").click(function() {
         zindex++;
         // alert(zindex);
-        if($(this).is("#home")) {
-        } else if($(this).is("#internet")) {
-            openWindow("internet_window");
-        } else if($(this).is("#pictures")) {
-            openWindow("pic_window");
-        } else if($(this).is("#videos")) {
-            openWindow("vid_window");
-        } else if($(this).is("#game")) {
-            openWindow("game_window");
-        } else if($(this).is("#folder")) {
-            openWindow("folder_window");
+        
+        // if($(this).is("#home")) {
+        // } else if($(this).is("#internet")) {
+        //     openWindow("internet_window");
+        // } else if($(this).is("#pictures")) {
+        //     openWindow("pic_window");
+        // } else if($(this).is("#videos")) {
+        //     openWindow("vid_window");
+        // } else if($(this).is("#game")) {
+        //     openWindow("game_window");
+        // } else if($(this).is("#folder")) {
+        //     openWindow("folder_window");
+        // }
+
+        switch($(this).attr("id")) {
+            case "home":
+                wind = "home";
+                break;
+            case "internet":
+                wind = "internet_window";
+                break;
+            case "pictures":
+                wind = "pic_window";
+                break;
+            case "videos":
+                wind = "vid_window";
+                break;
+            case "game":
+                wind = "game_window";
+                break;
+            case "folder":
+                wind = "folder_window";
+                break;
         }
+        alert(wind);
+        openWindow(wind);
     });
 });
 
-openWindow = function(winID) {
-    if(opened[winID] === false) {
-        opened[winID] = true;
+openWindow = function(windId) {
+    if(opened[windId] === false) {
+        opened[windId] = true;
         // alert(divID + "/n" + opened[divID]);
         // var screenHeight = window.innerHeight;
         // var screenWidth = window.innerWidth;
@@ -48,11 +73,11 @@ openWindow = function(winID) {
         //     // $("canvas").css({"margin": "auto", "position": "absolute"});
         //     $("#" + divID).css({"position": "absolute", "top": top, "right": right, "height": height, "width": width, "background-color": "Black", "z-index": "1", "box-sizing": "border-box"});
         // }
-        if(winID === "pic_window") {
+        if(windId === "pic_window") {
             $("#image_slider").css({"width": "5460px"});
         }
         // alert(zindex);
-        $("#" + winID).css({"display": "block", "position": "relative", "border": "5px double Blue", "z-index": zindex});
+        $("#" + windId).css({"display": "block", "position": "relative", "border": "5px double Blue", "z-index": zindex});
         // var element = document.getElementById(divID),
         // style = window.getComputedStyle(element),
         // top = style.getPropertyValue('z-index');
