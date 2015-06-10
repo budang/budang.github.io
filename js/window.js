@@ -82,5 +82,9 @@ openWindow = function(windId) {
         // top = style.getPropertyValue('z-index');
         // alert(top);
         // $("#" + divID).css({"background-color": "Black"});
+
+        // enable interactions
+        $("#" + windId).draggable();
+        $("#" + windId).resizable();
     }
 };
