@@ -49,7 +49,6 @@ $(document).ready(function() {
                 wind = "folder_window";
                 break;
         }
-        alert(wind);
         openWindow(wind);
     });
 });
