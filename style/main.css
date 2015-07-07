@@ -6,6 +6,11 @@ body, div, h1, h2, h3, h4, h5, h6, p, ul, img
 
 body
 {
+    background: url("https://raw.githubusercontent.com/budang/budang.github.io/master/assets/comiccon.jpg") no-repeat 50% 50% fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -40,7 +45,7 @@ body
 #background
 {
     /*background-image: url("http://40.media.tumblr.com/91bcd0434b28895e031049085426d822/tumblr_n8nszlI28p1qea8eeo8_1280.jpg");*/
-    background-image: url("https://raw.githubusercontent.com/budang/budang.github.io/master/assets/comiccon.jpg");
+    /*background-image: url("https://raw.githubusercontent.com/budang/budang.github.io/master/assets/comiccon.jpg");*/
     /*background-repeat: no-repeat;*/
     background-position: center center;
     background-size: 100%;
