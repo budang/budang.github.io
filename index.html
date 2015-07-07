@@ -13,13 +13,10 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     
     <!--<script src="js/background.js"></script>-->
-    <!--<script src="interact.min.js"></script>-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!--<script src="http://code.interactjs.io/interact-1.2.4.min.js"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/phaser/2.3.0/phaser.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <!--<script src="animate.js"></script>-->
     <script src="js/bomber.js"></script>
     <script src="js/slider.js"></script>
     <script src="js/window.js"></script>
@@ -28,7 +25,6 @@
         $(document).ready(function() {
             $(".resize-drag").draggable();
             $(".resize-drag").resizable();
-            // $("#header").css("z-index", "999");
         });
     </script>
     
@@ -68,38 +64,38 @@
 	    <div id="background" class="desktop">
 	        <div id="home_window" class="resize-drag window">
 	            <div class="topbar">
-                    <a href="">[x]</a>
-                    <!--<a href="">[-]</a>-->
-                    <a href="">[/]</a>
-                    <!--<a href="">[x]</a>-->
-                    <a href="">[-]</a>
+                    <span href="" class="exit">[x]</span>
+                    <!--<span href="">[-]</span>-->
+                    <span href="" class="div max">[/]</span>
+                    <!--<span href="">[x]</span>-->
+                    <span href="" class="min">[-]</span>
                 </div>
 	        </div>
 	        <!--<div id="about_window" class="resize-drag window">-->
 	        <!--    <div class="topbar">-->
-         <!--           <a href="">[x]</a>-->
-                    <!--<a href="">[-]</a>-->
-         <!--           <a href="">[/]</a>-->
-                    <!--<a href="">[x]</a>-->
-         <!--           <a href="">[-]</a>-->
+         <!--           <span href="" class="exit">[x]</span>-->
+                    <!--<span href="">[-]</span>-->
+         <!--           <span href="" class="div max">[/]</span>-->
+                    <!--<span href="">[x]</span>-->
+         <!--           <span href="" class="min">[-]</span>-->
          <!--       </div>-->
 	        <!--</div>-->
-	        <div id="internet_window" class="resize-drag window">
-	            <div class="topbar">
-                    <a href="">[x]</a>
-                    <!--<a href="">[-]</a>-->
-                    <a href="">[/]</a>
-                    <!--<a href="">[x]</a>-->
-                    <a href="">[-]</a>
-                </div>
-	        </div>
+	        <!--<div id="internet_window" class="resize-drag window">-->
+	        <!--    <div class="topbar">-->
+         <!--           <span href="" class="exit">[x]</span>-->
+                    <!--<span href="">[-]</span>-->
+         <!--           <span href="" class="div max">[/]</span>-->
+                    <!--<span href="">[x]</span>-->
+         <!--           <span href="" class="min">[-]</span>-->
+         <!--       </div>-->
+	        <!--</div>-->
             <div id="pic_window" class="resize-drag window slider_wrapper">
                 <div class="topbar">
-                    <a href="">[x]</a>
-                    <!--<a href="">[-]</a>-->
-                    <a href="">[/]</a>
-                    <!--<a href="">[x]</a>-->
-                    <a href="">[-]</a>
+                    <span href="" class="exit">[x]</span>
+                    <!--<span href="">[-]</span>-->
+                    <span href="" class="div max">[/]</span>
+                    <!--<span href="">[x]</span>-->
+                    <span href="" class="min">[-]</span>
                 </div>
                 <!--<div>-->
                     <ul id="image_slider">
@@ -125,11 +121,11 @@
             </div>
             <div id="vid_window" class="resize-drag window">
                 <div class="topbar">
-                    <a href="">[x]</a>
-                    <!--<a href="">[-]</a>-->
-                    <a href="">[/]</a>
-                    <!--<a href="">[x]</a>-->
-                    <a href="">[-]</a>
+                    <span href="" class="exit">[x]</span>
+                    <!--<span href="">[-]</span>-->
+                    <span href="" class="div max">[/]</span>
+                    <!--<span href="">[x]</span>-->
+                    <span href="" class="min">[-]</span>
                 </div>
                 <video controls>
                     <source src="assets/hacktx.mp4" type="video/mp4">
@@ -137,11 +133,11 @@
             </div>
 	        <div id="game_window" class="resize-drag window">
 	            <div class="topbar">
-                    <a href="">[x]</a>
-                    <!--<a href="">[-]</a>-->
-                    <a href="">[/]</a>
-                    <!--<a href="">[x]</a>-->
-                    <a href="">[-]</a>
+                    <span href="" class="exit">[x]</span>
+                    <!--<span href="">[-]</span>-->
+                    <span href="" class="div max">[/]</span>
+                    <!--<span href="">[x]</span>-->
+                    <span href="" class="min">[-]</span>
                 </div>
 	            <h1>bomberguy</h1>
 	            <div id="canvas"></div>
@@ -150,11 +146,11 @@
 	        </div>
             <div id="folder_window" class="resize-drag window">
                 <div class="topbar">
-                    <a href="">[x]</a>
-                    <!--<a href="">[-]</a>-->
-                    <a href="">[/]</a>
-                    <!--<a href="">[x]</a>-->
-                    <a href="">[-]</a>
+                    <span href="" class="exit">[x]</span>
+                    <!--<span href="">[-]</span>-->
+                    <span href="" class="div max">[/]</span>
+                    <!--<span href="">[x]</span>-->
+                    <span href="" class="min">[-]</span>
                 </div>
                 <div id="resume">
                     <a href="assets/collegeresume.pdf" target="_blank">

@@ -1,7 +1,7 @@
 var zindex = 0;
 
-// opened
-var opened = {
+// active
+var active = {
     home: false,
     internet_window: false,
     pic_window: false,
@@ -27,11 +27,17 @@ $(document).ready(function() {
             openWindow("folder_window");
         }
     });
+    
+    $(".exit").click(function() {
+        var window = $(this).parent().parent().attr("id");
+        $("#" + window).css("display", "none");
+        active[window] = false;
+    });
 });
 
 openWindow = function(winID) {
-    if(opened[winID] === false) {
-        opened[winID] = true;
+    if(active[winID] === false) {
+        active[winID] = true;
         zindex++;
         // alert(divID + "/n" + opened[divID]);
         // var screenHeight = window.innerHeight;
@@ -53,7 +59,8 @@ openWindow = function(winID) {
             $("#image_slider").css({"width": "5460px"});
         }
         // alert(zindex);
-        $("#" + winID).css({"display": "block", "position": "relative", "border": "5px double Blue", "z-index": zindex});
+        $("#" + winID).css({"display": "inline", "position": "relative", "border": "5px double Blue", "z-index": zindex});
+        $("#" + winID).css({"display": "block"});
         // var element = document.getElementById(divID),
         // style = window.getComputedStyle(element),
         // top = style.getPropertyValue('z-index');
