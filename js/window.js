@@ -1,7 +1,7 @@
 var zindex = 0;
 
-// active
-var active = {
+// active or opened windows
+var opened = {
     home: false,
     internet_window: false,
     pic_window: false,
@@ -9,33 +9,50 @@ var active = {
     game_window: false,
     folder_window: false
 }
+var active = jQuery.extend({}, opened);
 
 $(document).ready(function() {
     $(".square").click(function() {
+        var wind;
         zindex++;
-        if($(this).is("#home")) {
-        } else if($(this).is("#internet")) {
-            openWindow("internet_window");
-        } else if($(this).is("#pictures")) {
-            openWindow("pic_window");
-        } else if($(this).is("#videos")) {
-            openWindow("vid_window");
-        } else if($(this).is("#game")) {
-            openWindow("game_window");
-        } else if($(this).is("#folder")) {
-            openWindow("folder_window");
-        }
+        switch($(this).attr("id")) {
+            case "home":
+                wind = "home";
+                break;
+            case "internet":
+                wind = "internet_window";
+                break;
+            case "pictures":
+                wind = "pic_window";
+                break;
+            case "videos":
+                wind = "vid_window";
+                break;
+            case "game":
+                wind = "game_window";
+                break;
+            case "folder":
+                wind = "folder_window";
+                break;
+         }
+        openWindow(wind);
     });
     
-    $(".exit").click(function() {
+    $(".exit, .min").click(function() {
         var window = $(this).parent().parent().attr("id");
         $("#" + window).css("display", "none");
         active[window] = false;
+        if($(this).attr("class") === "exit") {
+            opened[window] = false;
+        }
     });
 });
 
 openWindow = function(winID) {
     if(active[winID] === false) {
+        if(opened[winID] === false) {
+            opened[winID] = true;
+        }
         active[winID] = true;
         zindex++;
         // alert(divID + "/n" + opened[divID]);
