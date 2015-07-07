@@ -1,4 +1,4 @@
-var zindex = 5;
+var zindex = 0;
 
 // opened
 var opened = {
@@ -32,6 +32,7 @@ $(document).ready(function() {
 openWindow = function(winID) {
     if(opened[winID] === false) {
         opened[winID] = true;
+        zindex++;
         // alert(divID + "/n" + opened[divID]);
         // var screenHeight = window.innerHeight;
         // var screenWidth = window.innerWidth;
