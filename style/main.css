@@ -24,7 +24,7 @@ body
     /*float: left;*/
     /*margin: 5px 5px;*/
     color: White;
-    z-index: 999;
+    z-index: 99999;
 }
 
 #header p
@@ -63,7 +63,7 @@ body
     background-color: DarkSlateBlue;
     opacity: 0.8;
     width: 75px;
-    z-index: 999;
+    z-index: 99999;
 }
 
 .square

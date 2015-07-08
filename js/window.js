@@ -15,6 +15,15 @@ var relations = {
 }
 
 $(document).ready(function() {
+    $(".window").addClass("new");
+    
+    $(".resize-drag").draggable({
+        drag: function(event, ui) {
+            bringForward(this);
+        }
+    });
+    $(".resize-drag").resizable();
+    
     $(".square").click(function() {
         $(this).css("background", "Red");
         var squareId = $(this).attr("id");
@@ -23,8 +32,7 @@ $(document).ready(function() {
     
     $(".exit, .min").click(function() {
         var windId = "#" + $(this).parent().parent().attr("id");
-        $(windId).css("display", "none");
-        $(windId).removeClass("active");
+        hideWindow(windId);
         if($(this).attr("class") === "exit") {
             $(windId).removeClass("opened");
             var squareId = "#" + getSquare($(windId).attr("id"));
@@ -33,33 +41,39 @@ $(document).ready(function() {
     });
     
     $(".window").click(function() {
-        zindex++;
-        $(this).css("z-index", zindex);
+        bringForward(this);
     });
 });
 
 function openWindow(windId) {
+    zindex++;
     windId = "#" + windId;
-    if(!($(windId).hasClass("active"))) {
+    var css = { "display": "block", "position": "absolute", "z-index": zindex };
+    
+    if(!($(windId).hasClass("opened"))) {
+        // open closed window
+        $(windId).addClass("opened");
         $(windId).addClass("active");
-        if(!($(windId).hasClass("opened"))) {
-            $(windId).addClass("opened");
-        }
         
-        zindex++;
-        var top = Math.floor(Math.random() * (maxHeight - minHeight + 1)) + minHeight + "px";
-        var left = Math.floor(Math.random() * (maxWidth - minWidth + 1)) + minWidth + "px";
         
         if(windId === "#pic_window") {
             $("#image_slider").css({"width": "5460px"});
         }
-        $(windId).css({
-            "display": "block",
-            "position": "absolute",
-            "z-index": zindex,
-            "top": top,
-            "left": left
-        });
+        
+        // randomize position when first only when opened the first time
+        if($(windId).hasClass("new")) {
+            css.top = Math.floor(Math.random() * (maxHeight - minHeight + 1)) + minHeight + "px";
+            css.left = Math.floor(Math.random() * (maxWidth - minWidth + 1)) + minWidth + "px";
+            $(windId).removeClass("new");
+        }
+        $(windId).css(css);
+    } else if(!$(windId).hasClass("active")) {
+        // reactivate minimized window
+        $(windId).addClass("active");
+        $(windId).css(css);
+    } else {
+        // minimize active window
+        hideWindow(windId);
     }
 }
 
@@ -67,4 +81,14 @@ function getSquare(windId) {
     for(var squareId in relations) {
         if(relations[squareId] === windId) { return squareId; }
     }
+}
+
+function bringForward(wind) {
+    zindex++;
+    $(wind).css({"z-index": zindex});
+}
+
+function hideWindow(windId) {
+    $(windId).css("display", "none");
+    $(windId).removeClass("active");
 }
