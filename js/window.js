@@ -31,6 +31,11 @@ $(document).ready(function() {
             $(squareId).css("background", "rgba(255, 255, 255, 0.6)");
         }
     });
+    
+    $(".window").click(function() {
+        zindex++;
+        $(this).css("z-index", zindex);
+    });
 });
 
 function openWindow(windId) {
@@ -51,7 +56,6 @@ function openWindow(windId) {
         $(windId).css({
             "display": "block",
             "position": "absolute",
-            "border": "5px double Blue",
             "z-index": zindex,
             "top": top,
             "left": left
