@@ -6,19 +6,73 @@ var maxWidth = Math.floor(screenWidth / 3), minWidth = Math.floor(screenWidth / 
 
 // square-window mappings
 var relations = {
-    "home": "home",
-    "internet": "internet_window",
-    "pictures": "pic_window",
-    "videos": "vid_window",
-    "game": "game_window",
-    "folder": "folder_window"
+    "home": {
+        "windId": "home",
+        "dims": {
+            "initHeight": "",
+            "initWidth": "",    
+            "prevHeight": "",
+            "prevWidth": ""
+        },
+    },
+    "internet": {
+        "windId": "internet_window",
+        "dims": {
+            "initHeight": "",
+            "initWidth": "",    
+            "prevHeight": "",
+            "prevWidth": ""
+        },
+    },
+    "pictures": {
+        "windId": "pic_window",
+        "dims": {
+            "initHeight": "340px",
+            "initWidth": "420px",    
+            "prevHeight": "",
+            "prevWidth": ""
+        },
+    },
+    "videos": {
+        "windId": "vid_window",
+        "dims": {
+            "initHeight": "485px",
+            "initWidth": "625px",    
+            "prevHeight": "",
+            "prevWidth": ""
+        },
+    },
+    "game": {
+        "windId": "game_window",
+        "dims": {
+            "initHeight": "675px",
+            "initWidth": "750px",    
+            "prevHeight": "",
+            "prevWidth": ""
+        },
+    },
+    "folder": {
+        "windId": "folder_window",
+        "dims": {
+            "initHeight": "470px",
+            "initWidth": "620px",    
+            "prevHeight": "",
+            "prevWidth": ""
+        },
+    }
 }
 
 $(document).ready(function() {
     $(".window").addClass("new");
     
     $(".resize-drag").draggable({
-        drag: function(event) { bringForward(this); },
+        drag: function(event) {
+            bringForward(this);
+            var windId = $(this).attr("id");
+            var squareId = getSquare(windId);
+            relations[squareId].dims.prevHeight = $(this).height() + "px";
+            relations[squareId].dims.prevWidth = $(this).width() + "px";
+        },
         containment: "window"
     });
     
@@ -27,7 +81,7 @@ $(document).ready(function() {
     $(".square").click(function() {
         $(this).css("background", "Red");
         var squareId = $(this).attr("id");
-        openWindow(relations[squareId]);
+        openWindow(relations[squareId].windId);
     });
     
     $(".exit, .min").click(function() {
@@ -79,7 +133,7 @@ function openWindow(windId) {
 
 function getSquare(windId) {
     for(var squareId in relations) {
-        if(relations[squareId] === windId) { return squareId; }
+        if(relations[squareId].windId === windId) { return squareId; }
     }
 }
 
