@@ -1,4 +1,8 @@
 var zindex = 0;
+var screenHeight = window.innerHeight;
+var screenWidth = window.innerWidth;
+var maxHeight = Math.floor(screenHeight / 3), minHeight = Math.floor(screenHeight / 5);
+var maxWidth = Math.floor(screenWidth / 3), minWidth = Math.floor(screenWidth / 5);
 
 // square-window mappings
 var relations = {
@@ -8,12 +12,6 @@ var relations = {
     "videos": "vid_window",
     "game": "game_window",
     "folder": "folder_window"
-}
-
-function getSquare(windId) {
-    for(var squareId in relations) {
-        if(relations[squareId] === windId) { return squareId; }
-    }
 }
 
 $(document).ready(function() {
@@ -30,7 +28,7 @@ $(document).ready(function() {
         if($(this).attr("class") === "exit") {
             $(windId).removeClass("opened");
             var squareId = "#" + getSquare($(windId).attr("id"));
-            $(squareId).css("background", "rgba(255, 255, 255, 0.7)");
+            $(squareId).css("background", "rgba(255, 255, 255, 0.6)");
         }
     });
 });
@@ -42,33 +40,27 @@ openWindow = function(windId) {
         if(!($(windId).hasClass("opened"))) {
             $(windId).addClass("opened");
         }
-        zindex++;
-        // alert(divID + "/n" + opened[divID]);
-        // var screenHeight = window.innerHeight;
-        // var screenWidth = window.innerWidth;
-        // alert(divID);
-        // var top = Math.floor(Math.random() * (screenHeight * 3 / 4 + 1)) + "px";
-        // var right = Math.floor(Math.random() * ((screenWidth - 75) * 3 / 4 + 1)) + "px";
-        // alert(top + ", " + right);
-        // var top = 0;
-        // var right = 0;
-        // var height = 500 + "px";
-        // var width = 700 + "px";
         
-        // if(divID !== "game_window") {
-        //     // $("canvas").css({"margin": "auto", "position": "absolute"});
-        //     $("#" + divID).css({"position": "absolute", "top": top, "right": right, "height": height, "width": width, "background-color": "Black", "z-index": "1", "box-sizing": "border-box"});
-        // }
+        zindex++;
+        var top = Math.floor(Math.random() * (maxHeight - minHeight + 1)) + minHeight + "px";
+        var left = Math.floor(Math.random() * (maxWidth - minWidth + 1)) + minWidth + "px";
+        
         if(windId === "#pic_window") {
             $("#image_slider").css({"width": "5460px"});
         }
-        // alert(zindex);
-        $(windId).css({"display": "inline", "position": "relative", "border": "5px double Blue", "z-index": zindex});
-        $(windId).css({"display": "block"});
-        // var element = document.getElementById(divID),
-        // style = window.getComputedStyle(element),
-        // top = style.getPropertyValue('z-index');
-        // alert(top);
-        // $("#" + divID).css({"background-color": "Black"});
+        $(windId).css({
+            "display": "block",
+            "position": "absolute",
+            "border": "5px double Blue",
+            "z-index": zindex,
+            "top": top,
+            "left": left
+        });
     }
 };
+
+function getSquare(windId) {
+    for(var squareId in relations) {
+        if(relations[squareId] === windId) { return squareId; }
+    }
+}
