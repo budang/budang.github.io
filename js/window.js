@@ -18,10 +18,10 @@ $(document).ready(function() {
     $(".window").addClass("new");
     
     $(".resize-drag").draggable({
-        drag: function(event, ui) {
-            bringForward(this);
-        }
+        drag: function(event) { bringForward(this); },
+        containment: "window"
     });
+    
     $(".resize-drag").resizable();
     
     $(".square").click(function() {
