@@ -33,7 +33,7 @@ $(document).ready(function() {
     });
 });
 
-openWindow = function(windId) {
+function openWindow(windId) {
     windId = "#" + windId;
     if(!($(windId).hasClass("active"))) {
         $(windId).addClass("active");
@@ -57,7 +57,7 @@ openWindow = function(windId) {
             "left": left
         });
     }
-};
+}
 
 function getSquare(windId) {
     for(var squareId in relations) {
