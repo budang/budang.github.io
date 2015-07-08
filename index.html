@@ -20,7 +20,6 @@
     <script src="js/bomber.js"></script>
     <script src="js/slider.js"></script>
     <script src="js/window.js"></script>
-
     
     <script>
         // https://msdn.microsoft.com/library/ff743760(v=vs.94).aspx
@@ -91,7 +90,7 @@
                     <!--<span href="">[x]</span>-->
                     <span href="" class="min">[-]</span>
                 </div>
-                <!--<div>-->
+                <div>
                     <ul id="image_slider">
                         <li><img src="https://raw.githubusercontent.com/budang/budang.github.io/master/assets/zoo.jpg" class="slide_img" alt="img"></li>
                         <!--<li><iframe width="420" height="300" src="https://www.facebook.com/video.php?v=955795694434442&l=5710636047910121991"></iframe>-->
@@ -111,7 +110,7 @@
                     </ul>
                     <span class="nvgt" id="prev"></span>
                     <span class="nvgt" id="next"></span>
-                <!--</div>-->
+                </div>
             </div>
             <div id="vid_window" class="resize-drag window">
                 <div class="topbar">
@@ -121,9 +120,11 @@
                     <!--<span href="">[x]</span>-->
                     <span href="" class="min">[-]</span>
                 </div>
-                <video controls>
-                    <source src="assets/hacktx.mp4" type="video/mp4">
-                </video>
+                <div>
+                    <video controls>
+                        <source src="assets/hacktx.mp4" type="video/mp4">
+                    </video>
+                </div>
             </div>
 	        <div id="game_window" class="resize-drag window">
 	            <div class="topbar">
@@ -133,10 +134,12 @@
                     <!--<span href="">[x]</span>-->
                     <span href="" class="min">[-]</span>
                 </div>
-	            <h1>bomberguy</h1>
-	            <div id="canvas"></div>
-                <p>Press space to drop bombs and arrow keys to move!<br>
-                &copy; Brandon Dang | Adan Briones | Jordan Torres</p>
+	            <div>>
+    	            <h1>bomberguy</h1>
+    	            <div id="canvas"></div>
+                    <p>Press space to drop bombs and arrow keys to move!<br>
+                    &copy; Brandon Dang | Adan Briones | Jordan Torres</p>
+	            </div>
 	        </div>
             <div id="folder_window" class="resize-drag window">
                 <div class="topbar">

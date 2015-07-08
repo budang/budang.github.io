@@ -60,7 +60,7 @@ function openWindow(windId) {
             $("#image_slider").css({"width": "5460px"});
         }
         
-        // randomize position when first only when opened the first time
+        // randomize position only when opened the first time
         if($(windId).hasClass("new")) {
             css.top = Math.floor(Math.random() * (maxHeight - minHeight + 1)) + minHeight + "px";
             css.left = Math.floor(Math.random() * (maxWidth - minWidth + 1)) + minWidth + "px";
