@@ -93,6 +93,7 @@ $(document).ready(function() {
         var windId = "#" + $(this).parent().parent().attr("id");
         hideWindow(windId);
         if($(this).attr("class") === "exit") {
+            if(windId === "#vid_window") { $("#vid").get(0).load(); }
             $(windId).removeClass("opened");
             var squareId = "#" + getSquare($(windId).attr("id"));
             $(squareId).css("background", "rgba(255, 255, 255, 0.6)");
