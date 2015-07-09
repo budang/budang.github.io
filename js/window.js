@@ -27,56 +27,61 @@ var relations = {
     "pictures": {
         "windId": "pic_window",
         "dims": {
-            "initHeight": "340px",
-            "initWidth": "420px",    
-            "prevHeight": "",
-            "prevWidth": ""
+            "initHeight": 340,
+            "initWidth": 420,    
+            "prevHeight": 340,
+            "prevWidth": 420
         },
     },
     "videos": {
         "windId": "vid_window",
         "dims": {
-            "initHeight": "485px",
-            "initWidth": "625px",    
-            "prevHeight": "",
-            "prevWidth": ""
+            "initHeight": 485,
+            "initWidth": 625,    
+            "prevHeight": 485,
+            "prevWidth": 625
         },
     },
     "game": {
         "windId": "game_window",
         "dims": {
-            "initHeight": "675px",
-            "initWidth": "750px",    
-            "prevHeight": "",
-            "prevWidth": ""
+            "initHeight": 675,
+            "initWidth": 750,    
+            "prevHeight": 675,
+            "prevWidth": 750
         },
     },
     "folder": {
         "windId": "folder_window",
         "dims": {
-            "initHeight": "470px",
-            "initWidth": "620px",    
-            "prevHeight": "",
-            "prevWidth": ""
+            "initHeight": 470,
+            "initWidth": 620,    
+            "prevHeight": 470,
+            "prevWidth": 620
         },
     }
 }
 
+var tempId;
 $(document).ready(function() {
     $(".window").addClass("new");
     
     $(".resize-drag").draggable({
-        drag: function(event) {
-            bringForward(this);
-            var windId = $(this).attr("id");
-            var squareId = getSquare(windId);
-            relations[squareId].dims.prevHeight = $(this).height() + "px";
-            relations[squareId].dims.prevWidth = $(this).width() + "px";
-        },
+        drag: function(event) { bringForward(this); },
         containment: "window"
     });
     
-    $(".resize-drag").resizable();
+    for(var squareId in relations) {
+        var windId = "#" + relations[squareId].windId;
+        $(windId).resizable({
+            resize: function(event) {
+                relations[squareId].dims.prevHeight = $(this).height();
+                relations[squareId].dims.prevWidth = $(this).width();
+            },
+            minHeight: relations[squareId].dims.initHeight,
+            minWidth: relations[squareId].dims.initWidth
+        })
+    }
     
     $(".square").click(function() {
         $(this).css("background", "Red");
