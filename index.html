@@ -5,12 +5,13 @@
     <meta charset="utf-8">
     <title>Welcome to Brandon</title>
 
-    <link rel="stylesheet" type="text/css" href="style/main.css">
-    <link rel="stylesheet" type="text/css" href="style/slider.css">
-    <link rel="stylesheet" type="text/css" href="style/bomber.css">
-    <link rel="stylesheet" type="text/css" href="style/window.css">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/slider.css">
+    <link rel="stylesheet" href="style/bomber.css">
+    <link rel="stylesheet" href="style/window.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css">
     
     <!-- <script src="js/background.js"></script>-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -36,6 +37,30 @@
         });
     </script>
 
+    <script>
+        $(document).ready(function() {
+           $("#signal").click(function() {
+               if($(this).hasClass("glyphicon-signal")) {
+                   $(this).removeClass("glyphicon-signal");
+                   $(this).addClass("glyphicon-ban-circle");
+               } else {
+                   $(this).removeClass("glyphicon-ban-circle");
+                   $(this).addClass("glyphicon-signal");
+               }
+           }),
+           
+           $("#volume").click(function() {
+               if($(this).hasClass("glyphicon-volume-up")) {
+                   $(this).removeClass("glyphicon-volume-up");
+                   $(this).addClass("glyphicon-volume-off");
+               } else {
+                   $(this).removeClass("glyphicon-volume-off");
+                   $(this).addClass("glyphicon-volume-up");
+               }
+           });
+        });
+    </script>
+
 </head>
 
 <body>
@@ -43,7 +68,13 @@
     <div id="desktop">
         <div id="header">
             <p id="tag">Brandon's Unity</p>
-            <p id="time">-</p>
+            <p id="status">
+                <span id="power" class="glyphicon glyphicon-cog"></span>
+                <span id="time">-</span>
+                <span id="signal" class="glyphicon glyphicon-signal"></span>
+                <span id="volume" class="glyphicon glyphicon-volume-up"></span>
+                <span id="battery" class="icon ion-battery-charging"></span>
+            </p>
         </div>
         <div id="sidebar" class="desktop">
             <div class="square" id="home"><img src="http://cdn.flaticon.com/png/256/60535.png" alt="home"/></div>

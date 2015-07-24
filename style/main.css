@@ -38,10 +38,39 @@ body
     float: left;
 }
 
-#time
+#status
 {
+    width: 500px;
     float: right;    
 }
+
+#status p
+{
+    /*text-align: right;*/
+}
+
+#status span
+{
+    margin-left: 10px;
+    cursor: pointer;
+    /*text-align: right;*/
+    float: right;
+}
+
+/*.glyphicon-cog*/
+/*{*/
+/*    font-size: 0.9em;*/
+/*}*/
+
+/*.glyphicon-signal*/
+/*{*/
+/*    font-size: 0.8em;*/
+/*}*/
+
+/*.glyphicon-volume-up, .ion-battery-charging*/
+/*{*/
+/*    font-size: 1.2em;*/
+/*}*/
 
 .desktop
 {
