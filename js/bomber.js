@@ -22,6 +22,7 @@
     var turning = null;
     var spaceKey = null;
     var baddieCounter = 5;
+    var ready, power, complete, dead;
     
     // note: graphics copyright 2015 Photon Storm Ltd
     function preload() {
@@ -31,6 +32,10 @@
         game.load.spritesheet('baddie', 'assets/baddie.png', 32,32);
         game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
         game.load.spritesheet('explosion', 'assets/explosion17.png', 64, 64);
+        // game.load.audio('get-ready','-002-get-ready-.mp3');
+        game.load.audio('game-play-power-up','assets/audio/-004-game-play-power-up-.mp3');
+        game.load.audio('level-complete','assets/audio/-005-level-complete.mp3');
+        game.load.audio('dead','assets/audio/-009-dead.mp3');
     }
     
     function create() {
@@ -78,7 +83,21 @@
                 bomb.destroy();
             }, 1000);        
         }, this);
+        
+        // ready = game.add.audio('get-ready');
+        power = game.add.audio('game-play-power-up');
+        complete = game.add.audio('level-complete');
+        dead = game.add.audio('dead');     
+        
+        power.play();
+        power.loop = true;
+        
+        // game.sound.setDecodedCallback([power,complete,dead], start, this);
     }
+    
+    // function start() {
+    //     power.play();
+    // }
     
     function rand(min, max) {
         var x = Math.floor(Math.random()*(max - min + 1) + min);
@@ -136,6 +155,12 @@
         }
     
         checkWin();
+    }
+    
+    function render() {
+        game.debug.soundInfo(play, 20, 32);
+        // game.debug.soundInfo(complete, 20, 32);
+        // game.debug.soundInfo(dead, 20, 32);
     }
     
     function checkWin() {
@@ -334,6 +359,7 @@
     }
     
     function endGame(status) {
+        power.mute = true;
         game.paused = true;
         var text = game.add.text(0, game.camera.height / 3, "", {
             font: "129px Arial",
@@ -343,14 +369,16 @@
         text.fixedToCamera = false;
         if(status === "win") {
             text.setText("You win!!!!!!");
+            complete.play();
         } else {
-            text.setText("Game Over");        
+            text.setText("Game Over"); 
+            dead.play();
         }
         setTimeout(function() {
             text.setText("");
             create();
             game.paused = false;
-        }, 2500);
+        }, 5000);
     }
     
     function fallout(b) {
