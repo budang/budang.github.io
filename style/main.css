@@ -95,6 +95,42 @@ body
     z-index: 99999;
 }
 
+#home
+{
+    background-image: url('http://icons.iconarchive.com/icons/umut-pulat/tulliana-2/128/folder-home-icon.png');
+    background-size: 59px 65px;
+}
+
+#internet
+{
+    background-image: url('http://icons.iconarchive.com/icons/elegantthemes/beautiful-flat/128/browser-icon.png');
+    background-size: 53px 58px;
+}
+
+#pictures
+{
+    background-image: url('http://icons.iconarchive.com/icons/designcontest/vintage/128/Camera-icon.png');
+    background-size: 56px 59px;
+}
+
+#videos
+{
+    background-image: url('http://icons.iconarchive.com/icons/cornmanthe3rd/plex/128/Media-mpc-hc-icon.png');
+    background-size: 57px 59px;
+}
+
+#game
+{
+    background-image: url('http://icons.iconarchive.com/icons/cornmanthe3rd/plex/128/System-games-icon.png');
+    background-size: 60px 60px;
+}
+
+#folder
+{
+    background-image: url('http://icons.iconarchive.com/icons/cornmanthe3rd/plex/128/System-explorer-icon.png');
+    background-size: 54px 58px;
+}
+
 .square
 {
     width: 65px;
@@ -105,8 +141,15 @@ body
     /*background-color: White;*/
     /*opacity: 0.4;*/
     background: rgba(255, 255, 255, 0.6);
-    margin: 7px 5px;
+    margin: 3px 5px;
     border-radius: 15px;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+
+.square:nth-of-type(1)
+{
+    margin-top: 6px;
 }
 
 .square:hover {
