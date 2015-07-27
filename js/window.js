@@ -7,7 +7,7 @@ var maxWidth = Math.floor(screenWidth / 3), minWidth = Math.floor(screenWidth / 
 // square-window mappings
 var relations = {
     "home": {
-        "windId": "home",
+        "windId": "home_window",
         "dims": {
             "initHeight": "",
             "initWidth": "",    
