@@ -84,7 +84,7 @@ $(document).ready(function() {
     }
     
     $(".square").click(function() {
-        $(this).css("background", "Red");
+        $(this).css("background-color", "Red");
         var squareId = $(this).attr("id");
         openWindow(relations[squareId].windId);
     });
@@ -96,7 +96,7 @@ $(document).ready(function() {
             if(windId === "#vid_window") { $("#vid").get(0).load(); }
             $(windId).removeClass("opened");
             var squareId = "#" + getSquare($(windId).attr("id"));
-            $(squareId).css("background", "rgba(255, 255, 255, 0.6)");
+            $(squareId).css("background-color", "rgba(255, 255, 255, 0.6)");
         }
     });
     
