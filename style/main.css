@@ -20,11 +20,14 @@ body
     position: relative;
     width: 100%;
     height: 22px;
-    background-color: Gray;
+    background-color: #585858;
     /*float: left;*/
     /*margin: 5px 5px;*/
     color: White;
     z-index: 99999;
+    -webkit-box-shadow: 0 3px 3px black;
+    -moz-box-shadow: 0 3px 3px black;
+    box-shadow: 0 3px 3px black;
 }
 
 #header p
@@ -40,7 +43,6 @@ body
 
 #status
 {
-    width: 500px;
     float: right;    
 }
 
@@ -92,13 +94,14 @@ body
     background-color: DarkSlateBlue;
     opacity: 0.8;
     width: 75px;
-    z-index: 99999;
+    z-index: 99998;
 }
 
 #home
 {
     background-image: url('http://icons.iconarchive.com/icons/umut-pulat/tulliana-2/128/folder-home-icon.png');
     background-size: 59px 65px;
+    margin-top: 10px;
 }
 
 #internet
@@ -133,16 +136,16 @@ body
 
 .square
 {
-    width: 65px;
-    height: 65px;
-    line-height: 65px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
     text-align: center;
     z-index: 2;
     /*background-color: White;*/
     /*opacity: 0.4;*/
     background: rgba(255, 255, 255, 0.6);
-    margin: 3px 5px;
-    border-radius: 15px;
+    margin: 4px 7.5px;
+    border-radius: 5px;
     background-repeat: no-repeat;
     background-position: center; 
 }
