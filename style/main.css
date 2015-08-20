@@ -147,7 +147,9 @@ body
     margin: 4px 7.5px;
     border-radius: 5px;
     background-repeat: no-repeat;
-    background-position: center; 
+    background-position: center;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 .square:nth-of-type(1)
