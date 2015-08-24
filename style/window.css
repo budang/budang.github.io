@@ -55,6 +55,31 @@
     background-color: Gray;
 }
 
+#internet_window
+{
+    height: 400px;
+    width: 500px;
+    background-color: White;
+}
+
+#shortcuts
+{
+    margin: auto;
+}
+
+.con_icon
+{
+    display: inline-box;
+    float: left;
+    margin: 10px;
+}
+
+.con_icon img
+{
+    width: 100px;
+    height: 100px;
+}
+
 #pic_window
 {
     height: 340px;

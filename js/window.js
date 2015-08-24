@@ -71,17 +71,17 @@ $(document).ready(function() {
         containment: "window"
     });
     
-    for(var squareId in relations) {
-        var windId = "#" + relations[squareId].windId;
-        $(windId).resizable({
-            resize: function(event) {
-                relations[squareId].dims.prevHeight = $(this).height();
-                relations[squareId].dims.prevWidth = $(this).width();
-            },
-            minHeight: relations[squareId].dims.initHeight,
-            minWidth: relations[squareId].dims.initWidth
-        })
-    }
+    // for(var squareId in relations) {
+    //     var windId = "#" + relations[squareId].windId;
+    //     $(windId).resizable({
+    //         resize: function(event) {
+    //             relations[squareId].dims.prevHeight = $(this).height();
+    //             relations[squareId].dims.prevWidth = $(this).width();
+    //         },
+    //         minHeight: relations[squareId].dims.initHeight,
+    //         minWidth: relations[squareId].dims.initWidth
+    //     })
+    // }
     
     $(".square").click(function() {
         $(this).css("background-color", "Red");
