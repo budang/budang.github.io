@@ -61,6 +61,28 @@
            });
         });
     </script>
+    
+    <script>
+        $(document).ready(function() {
+            $("#searchbar").keypress(function(e) {
+                var search = $("#searchbar").val();
+                if(e.which === 13 && search) {
+                    // check if url exists; if not, do google search
+                    // $.get(search, function() {
+                    //     var win = window.open(search, '_blank');
+                    //     win.focus();
+                    // }).fail(function() {
+                    //     var url = "https://www.google.com/search?q=" + encodeURIComponent(search);
+                    //     var win = window.open(url, '_blank');
+                    //     win.focus();
+                    // });
+                    var url = "https://www.google.com/search?q=" + encodeURIComponent(search);
+                    var win = window.open(url, '_blank');
+                    win.focus();
+                } 
+            });
+        });
+    </script>
 
 </head>
 
@@ -111,6 +133,10 @@
                 </div>
                 <div id="homepage">
                     <h1>Web Browser</h1>
+                    <div class="input-group browser-search">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                        <input id="searchbar" type="text" class="form-control" placeholder="http://budang.github.io" aria-describedby="basic-addon1">
+                    </div>
                     <hr>
                     <div id="shortcuts">
                         <p>Bookmarks:</p>

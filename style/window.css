@@ -81,6 +81,12 @@
     font-size: 55px;
 }
 
+.browser-search
+{
+    width: 90%;
+    margin: auto;
+}
+
 #internet_window hr
 {
     height: 1px;
