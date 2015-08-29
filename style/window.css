@@ -1,7 +1,14 @@
 /*fonts*/
-@font-face {
+@font-face
+{
     font-family: TheMillionMileMan;
     src: url('../assets/TheMillionMileMan.woff');
+}
+
+@font-face
+{
+    font-family: DollieScript;
+    src: url('../assets/DollieScript.woff');
 }
 
 .window
@@ -87,6 +94,8 @@
     text-align: left;
     color: Black;
     margin-bottom: 5px;
+    font-family: "Trebuchet MS", Verdana,sans-serif;
+    font-size: 20px;
 }
 
 #shortcuts

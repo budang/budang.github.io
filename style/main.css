@@ -6,7 +6,7 @@ body, div, h1, h2, h3, h4, h5, h6, p, ul, img
 
 body
 {
-    background: url("https://raw.githubusercontent.com/budang/budang.github.io/master/assets/comiccon.jpg") no-repeat 50% 50% fixed;
+    background: url("../assets/comiccon.jpg") no-repeat 50% 50% fixed;
     background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
