@@ -59,18 +59,40 @@
 .min
 {
     background-color: Gray;
-}
+} 
 
 #internet_window
 {
     height: 400px;
-    width: 500px;
+    width: 700px;
     background-color: White;
+}
+
+#internet_window h1
+{
+    font-family: TheMillionMileMan;
+    font-size: 55px;
+}
+
+#internet_window hr
+{
+    height: 1px;
+    border: 0;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    width: 90%;
+}
+
+#internet_window p
+{
+    text-align: left;
+    color: Black;
+    margin-bottom: 5px;
 }
 
 #shortcuts
 {
     margin: auto;
+    width: 600px;
 }
 
 .con_icon
@@ -82,8 +104,13 @@
 
 .con_icon img
 {
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
+}
+
+.con_icon img:hover
+{
+    opacity: 0.8;
 }
 
 #pic_window
