@@ -67,8 +67,8 @@ $(document).ready(function() {
     $(".window").addClass("new");
     
     $(".resize-drag").draggable({
-        drag: function(event) { bringForward(this); },
-        containment: "window"
+        drag: function(event) { bringForward(this); }/*,
+        containment: "window"*/
     });
     
     // for(var squareId in relations) {

@@ -70,10 +70,10 @@
 
 #home_window
 {
-    height: 400px;
+    height: 500px;
     width: 600px;
     background-color: White;
-    background-image: url("https://41.media.tumblr.com/78a57792b11d79aefeb8c5cb0c60854a/tumblr_n9t86qUR1l1tij7i0o1_r2_1280.png");
+    background-image: url("https://41.media.tumblr.com/6a25b2034c70961271992feb3ee03b4d/tumblr_nfvcvzAAhr1tij7i0o1_540.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
@@ -84,6 +84,8 @@
     font-family: TheMillionMileMan;
     font-size: 55px;
     font-weight: bold;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    margin-top: 15px;
 }
 
 #home_window hr
@@ -95,19 +97,31 @@
     color: White;
 }
 
-#home_window h3
+#info
+{
+    width: 550px;
+    height: 320px;
+    margin-left: 25px;
+    background-color: #5E2750;
+    opacity: 0.9;
+    border: 1px dotted #DD4814;
+}
+
+#home_window p
 {
     color: White;
-    text-align: center;
-    font-family: "Trebuchet MS", Verdana, sans-serif;
+    text-align: left;
+    font-family: Ubuntu;
     font-size: 30px;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    margin-left: 15px;
+    margin-top: 15px;
 }
 
 #internet_window
 {
     height: 450px;
-    width: 700px;
+    width: 720px;
     background-image: url("https://41.media.tumblr.com/52034a07cb604b7379560319251f80b2/tumblr_nec8y8JlIb1tij7i0o1_1280.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -124,7 +138,7 @@
 
 .browser-search
 {
-    width: 90%;
+    width: 85%;
     margin: auto;
 }
 
