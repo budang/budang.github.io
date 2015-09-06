@@ -92,7 +92,7 @@ $(document).ready(function() {
     $(".exit, .min").click(function() {
         var windId = "#" + $(this).parent().parent().attr("id");
         hideWindow(windId);
-        if($(this).attr("class") === "exit") {
+        if($(this).hasClass("exit")) {
             if(windId === "#vid_window") { $("#vid").get(0).load(); }
             $(windId).removeClass("opened");
             var squareId = "#" + getSquare($(windId).attr("id"));
