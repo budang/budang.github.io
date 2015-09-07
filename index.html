@@ -60,6 +60,25 @@
                     $(this).addClass("glyphicon-volume-up");
                 }
             }),
+            
+            $("#time").click(function() {
+                if($(this).hasClass("glyphicon-time")) {
+                    $(this).removeClass("glyphicon glyphicon-time");
+                    // $(this).text("-");
+                    var options = {
+                        weekday: "short", year: "numeric", month: "short",
+                        day: "numeric", hour: "2-digit", minute: "2-digit"
+                    };
+                    (function showTime() {
+                        var date = new Date(Date());
+                        $("#time").text(date.toLocaleTimeString("en-us", options));
+                        setTimeout(showTime, 60000);
+                    })();
+                } else {
+                    $(this).addClass("glyphicon glyphicon-time");
+                    $(this).text("");
+                }
+            }),
            
             $("#resize").click(function() {
                 if($(this).hasClass("glyphicon-resize-full")) {
