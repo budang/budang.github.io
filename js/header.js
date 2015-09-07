@@ -35,7 +35,7 @@ $(document).ready(function() {
     $("#time").click(function() {
         if($(this).hasClass("glyphicon-time")) {
             $(this).removeClass("glyphicon glyphicon-time");
-            (showTime())();
+            showTime();
         } else {
             $(this).addClass("glyphicon glyphicon-time");
             $(this).text("");
