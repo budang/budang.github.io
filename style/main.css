@@ -169,3 +169,58 @@ body
     width: 75%;
     vertical-align: middle;
 }
+
+:-webkit-full-screen
+{
+    background: url("../assets/comiccon.jpg") no-repeat 50% 50% fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+:-moz-full-screen
+{
+    background: url("../assets/comiccon.jpg") no-repeat 50% 50% fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+:-ms-fullscreen
+{
+    background: url("../assets/comiccon.jpg") no-repeat 50% 50% fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    overflow-x: hidden;
+    overflow-y: hidden;;
+}
+
+:full-screen
+{ /*pre-spec */
+    background: url("../assets/comiccon.jpg") no-repeat 50% 50% fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+:fullscreen
+{ /* spec */
+    background: url("../assets/comiccon.jpg") no-repeat 50% 50% fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
