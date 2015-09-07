@@ -5,11 +5,11 @@ $(document).ready(function() {
         weekday: "short", year: "numeric", month: "short",
         day: "numeric", hour: "2-digit", minute: "2-digit"
     };
-    var showTime = function() {
+    (function showTime() {
         var date = new Date(Date());
-        $("#time").text(date.toLocaleTimeString("en-us", options));
+        $("#time2").text(date.toLocaleTimeString("en-us", options));
         setTimeout(showTime, 60000);
-    }
+    })();
 
     // glyphicon interactions
     // $("#signal").click(function() {
@@ -33,13 +33,13 @@ $(document).ready(function() {
     // }),
     
     $("#time").click(function() {
-        if($(this).hasClass("glyphicon-time")) {
-            $(this).removeClass("glyphicon glyphicon-time");
-            showTime();
-        } else {
-            $(this).addClass("glyphicon glyphicon-time");
-            $(this).text("");
-        }
+        $(this).css("display", "none");
+        $("#time2").css("display", "inline");
+    }),
+    
+    $("#time2").click(function() {
+        $(this).css("display", "none");
+        $("#time").css("display", "inline");
     }),
    
     $("#resize").click(function() {

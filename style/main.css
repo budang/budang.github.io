@@ -62,6 +62,11 @@ body
     float: right;
 }
 
+#time2
+{
+    display: none;
+}
+
 /*.glyphicon-cog*/
 /*{*/
 /*    font-size: 0.9em;*/
