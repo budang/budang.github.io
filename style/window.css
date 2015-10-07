@@ -192,15 +192,15 @@
 }
 
 /*workaround for iframe dragging*/
-#cover
+/*#cover
 {
     height: 90%;
     width: 100%;
     position: relative;
-    margin-top: -340px;
+    margin-top: -415px;
     top: 0;
     left: 0;
-}
+}*/
 
 video
 {
