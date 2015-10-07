@@ -191,6 +191,17 @@
     background-color: Black;
 }
 
+/*workaround for iframe dragging*/
+#cover
+{
+    height: 90%;
+    width: 100%;
+    position: relative;
+    margin-top: -340px;
+    top: 0;
+    left: 0;
+}
+
 video
 {
     width: 620px;
