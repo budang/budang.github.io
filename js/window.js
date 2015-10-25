@@ -111,22 +111,27 @@ function openWindow(windId) {
     var css = { "display": "block", "position": "absolute", "z-index": zindex };
     
     if(!($(windId).hasClass("opened"))) {
-        // open closed window
-        $(windId).addClass("opened");
-        $(windId).addClass("active");
+        // open new window (with delay for flare)
+        $("*").css("cursor", "progress");
+        var rand = Math.floor(Math.random() * 600);
+        setTimeout(function() {
+            $(windId).addClass("opened");
+            $(windId).addClass("active");
+            
+            if(windId === "#pic_window") {
+                $("#image_slider").css({"width": "5460px"});
+            }
+            
+            // randomize position only when opened the first time    
+            if($(windId).hasClass("new")) {
+                css.top = Math.floor(Math.random() * (maxHeight - minHeight + 1)) + minHeight + "px";
+                css.left = Math.floor(Math.random() * (maxWidth - minWidth + 1)) + minWidth + "px";
+                $(windId).removeClass("new");
+            }
         
-        
-        if(windId === "#pic_window") {
-            $("#image_slider").css({"width": "5460px"});
-        }
-        
-        // randomize position only when opened the first time
-        if($(windId).hasClass("new")) {
-            css.top = Math.floor(Math.random() * (maxHeight - minHeight + 1)) + minHeight + "px";
-            css.left = Math.floor(Math.random() * (maxWidth - minWidth + 1)) + minWidth + "px";
-            $(windId).removeClass("new");
-        }
-        $(windId).css(css);
+            $(windId).css(css);
+            $("*").css("cursor", "default");
+        }, rand);
     } else if(!$(windId).hasClass("active")) {
         // reactivate minimized window
         $(windId).addClass("active");
