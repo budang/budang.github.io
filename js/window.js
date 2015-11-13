@@ -67,7 +67,8 @@ $(document).ready(function() {
     $(".window").addClass("new");
     
     $(".resize-drag").draggable({
-        drag: function(event) { bringForward(this); }/*,
+        drag: function(event) { bringForward(this); },
+        handle: ".topbar"/*,
         containment: "window"*/
     });
     
@@ -141,6 +142,8 @@ function openWindow(windId) {
         $(windId).css(css);
     } else {
         // minimize active window
+        var squareId = "#" + getSquare($(windId).attr("id"));
+        $(squareId).css("background-color", "rgba(192, 192, 192, 0.5)");
         hideWindow(windId);
     }
 }
