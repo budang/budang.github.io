@@ -97,6 +97,9 @@ $(document).ready(function() {
             $(windId).removeClass("opened");
             var squareId = "#" + getSquare($(windId).attr("id"));
             $(squareId).css("background-color", "transparent");
+        } else { // min
+            var squareId = "#" + getSquare($(windId).attr("id"));
+            $(squareId).css("background-color", "rgba(192, 192, 192, 0.5)");
         }
     });
     
