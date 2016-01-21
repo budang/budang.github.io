@@ -186,7 +186,8 @@
 
 #pic_window
 {
-    height: 440px;
+    /*height: 440px;*/
+    height: 420px;
     width: 562px;
     background-color: Black;
 }
