@@ -23,12 +23,7 @@ function init() {
     
     prev = document.getElementById("prev");
     next = document.getElementById("next");
-    prev.onclick = function() {
-        onClickPrev();
-    };
-    next.onclick = function() {
-        onClickNext();
-    };
+    toggleClickOn();
 }
 
 function animate(opts) {
@@ -66,25 +61,42 @@ function slideTo(imageToGo) {
         },
         callback:function() {
             currentImage = imageToGo;
+            toggleClickOn();
         }	
     };
     animate(opts);
 }
 
 function onClickPrev() {
+    toggleClickOff();
     if (currentImage === 0) {
         slideTo(imageNumber - 1);
     } else {
         slideTo(currentImage - 1);
-    }		
+    }
 }
 
 function onClickNext() {
+    toggleClickOff();
     if (currentImage === imageNumber - 1) {
         slideTo(0);
     } else {
         slideTo(currentImage + 1);
-    }		
+    }
+}
+
+function toggleClickOn() {
+    prev.onclick = function() {
+        onClickPrev();
+    };
+    next.onclick = function() {
+        onClickNext();
+    };
+}
+
+function toggleClickOff() {
+    prev.onclick = function() {};
+    next.onclick = function() {};
 }
 
 window.onload = init;
