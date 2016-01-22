@@ -128,8 +128,8 @@ function openWindow(windId) {
             
             // randomize position only when opened the first time    
             if($(windId).hasClass("new")) {
-                css.top = Math.floor(Math.random() * (maxHeight - minHeight + 1)) + minHeight + "px";
-                css.left = Math.floor(Math.random() * (maxWidth - minWidth + 1)) + minWidth + "px";
+                css.top = Math.floor(Math.random() * (screen.height / 3 - minHeight + 1)) + minHeight / 2 + "px";
+                css.left = Math.floor(Math.random() * (screen.width / 2 - minWidth + 1)) + minWidth / 2 + "px";
                 $(windId).removeClass("new");
             }
         
