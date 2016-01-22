@@ -135,6 +135,7 @@ function openWindow(windId) {
         
             $(windId).css(css);
             $("*").css("cursor", "default");
+            $("#status span, p.file, img.file, a, .square").css("cursor", "pointer");
         }, rand);
     } else if(!$(windId).hasClass("active")) {
         // reactivate minimized window
