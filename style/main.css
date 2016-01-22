@@ -4,6 +4,16 @@ body, div, h1, h2, h3, h4, h5, h6, p, ul, img
     padding: 0;
 }
 
+*
+{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 body
 {
     background: url("../assets/backgrounds/brack.jpg") no-repeat 50% 50% fixed;
@@ -55,6 +65,12 @@ body
 {
     float: left;
     margin-top: 0 !important;
+}
+
+#tag > a
+{
+    color: white;
+    text-decoration: none;
 }
 
 #status
