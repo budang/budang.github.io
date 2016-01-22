@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8">
     <title>Brandon's Unity</title>
     <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
@@ -26,6 +27,10 @@
     <script type="text/javascript" src="js/header.js"></script>
     
     <script>
+        $(window).load(function() {
+            $("#loader").fadeOut("slow");
+        });
+
         $(document).ready(function() {
             $("#searchbar").keypress(function(e) {
                 var search = $("#searchbar").val();
@@ -51,6 +56,8 @@
 </head>
 
 <body>
+
+    <div id="loader"></div>
 
     <div id="desktop">
         <div id="header">
