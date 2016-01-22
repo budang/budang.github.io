@@ -6,7 +6,7 @@ body, div, h1, h2, h3, h4, h5, h6, p, ul, img
 
 body
 {
-    background: url("../assets/comiccon.jpg") no-repeat 50% 50% fixed;
+    background: url("../assets/backgrounds/brack.jpg") no-repeat 50% 50% fixed;
     background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -20,17 +20,17 @@ body
     position: relative;
     width: 100%;
     height: 22px;
-    background: -webkit-linear-gradient(Gray, #585858);
-    background: -o-linear-gradient(Gray, #585858);
-    background: -moz-linear-gradient(Gray, #585858);
-    background: linear-gradient(Gray, #585858);
+    background: -webkit-linear-gradient(Gray, #303030);
+    background: -o-linear-gradient(Gray, #303030);
+    background: -moz-linear-gradient(Gray, #303030);
+    background: linear-gradient(Gray, #303030);
     /*float: left;*/
     /*margin: 5px 5px;*/
     color: White;
     z-index: 99999;
-    -webkit-box-shadow: 0 3px 3px black;
-    -moz-box-shadow: 0 3px 3px black;
-    box-shadow: 0 3px 3px black;
+    -webkit-box-shadow: 0 1px 1px black;
+    -moz-box-shadow: 0 1px 1px black;
+    box-shadow: 0 1px 1px black;
 }
 
 #header p
@@ -42,6 +42,7 @@ body
 #tag
 {
     float: left;
+    margin-top: 0 !important;
 }
 
 #status
@@ -99,47 +100,47 @@ body
 #sidebar
 {
     /*background-color: DarkMagenta;*/
-    background-color: DarkSlateBlue;
-    opacity: 0.8;
+    background-color: #660000;
+    opacity: 0.95;
     width: 75px;
     z-index: 99998;
 }
 
 #home
 {
-    background-image: url('http://icons.iconarchive.com/icons/umut-pulat/tulliana-2/128/folder-home-icon.png');
-    background-size: 57px 63px;
+    background-image: url('../assets/icons/home.png');
+    background-size: 53px 50px;
     margin-top: 10px;
 }
 
 #internet
 {
-    background-image: url('http://icons.iconarchive.com/icons/elegantthemes/beautiful-flat/128/browser-icon.png');
-    background-size: 50px 53px;
+    background-image: url('../assets/icons/brow.png');
+    background-size: 53px 53px;
 }
 
 #pictures
 {
-    background-image: url('http://icons.iconarchive.com/icons/designcontest/vintage/128/Camera-icon.png');
-    background-size: 54px 56px;
+    background-image: url('../assets/icons/pic.png');
+    background-size: 54px 54px;
 }
 
 #videos
 {
-    background-image: url('http://icons.iconarchive.com/icons/cornmanthe3rd/plex/128/Media-mpc-hc-icon.png');
-    background-size: 55px 59px;
+    background-image: url('../assets/icons/mov.png');
+    background-size: 60px 52px;
 }
 
 #game
 {
-    background-image: url('http://icons.iconarchive.com/icons/cornmanthe3rd/plex/128/System-games-icon.png');
-    background-size: 58px 55px;
+    background-image: url('../assets/icons/bguy.png');
+    background-size: 49px 49px;
 }
 
 #folder
 {
-    background-image: url('http://icons.iconarchive.com/icons/cornmanthe3rd/plex/128/System-explorer-icon.png');
-    background-size: 52px 56px;
+    background-image: url('../assets/icons/fold.png');
+    background-size: 52px 66px;
 }
 
 .square
@@ -179,7 +180,7 @@ body
 
 :-webkit-full-screen
 {
-    background: url("../assets/comiccon.jpg") no-repeat 50% 50% fixed;
+    background: url("../assets/backgrounds/brack.jpg") no-repeat 50% 50% fixed;
     background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -190,7 +191,7 @@ body
 
 :-moz-full-screen
 {
-    background: url("../assets/comiccon.jpg") no-repeat 50% 50% fixed;
+    background: url("../assets/backgrounds/brack.jpg") no-repeat 50% 50% fixed;
     background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -201,7 +202,7 @@ body
 
 :-ms-fullscreen
 {
-    background: url("../assets/comiccon.jpg") no-repeat 50% 50% fixed;
+    background: url("../assets/backgrounds/brack.jpg") no-repeat 50% 50% fixed;
     background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -212,7 +213,7 @@ body
 
 :full-screen
 { /*pre-spec */
-    background: url("../assets/comiccon.jpg") no-repeat 50% 50% fixed;
+    background: url("../assets/backgrounds/brack.jpg") no-repeat 50% 50% fixed;
     background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -223,7 +224,7 @@ body
 
 :fullscreen
 { /* spec */
-    background: url("../assets/comiccon.jpg") no-repeat 50% 50% fixed;
+    background: url("../assets/backgrounds/brack.jpg") no-repeat 50% 50% fixed;
     background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

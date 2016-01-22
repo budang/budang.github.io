@@ -30,10 +30,10 @@
     height: 26px;
     margin-bottom: 5px;
     border-bottom: 1px solid Black;
-    background: -webkit-linear-gradient(Gray, #585858);
-    background: -o-linear-gradient(Gray, #585858);
-    background: -moz-linear-gradient(Gray, #585858);
-    background: linear-gradient(Gray, #585858);
+    background: -webkit-linear-gradient(Gray, #303030);
+    background: -o-linear-gradient(Gray, #303030);
+    background: -moz-linear-gradient(Gray, #303030);
+    background: linear-gradient(Gray, #303030);
 }
 
 .windnav
@@ -177,6 +177,7 @@
 {
     width: 130px;
     height: 130px;
+    cursor: pointer !important;
 }
 
 .con_icon img:hover
@@ -263,4 +264,9 @@ p.file
 {
     color: Black;
     font-size: 18px;
+}
+
+p.file, img.file
+{
+    cursor: pointer !important;
 }
