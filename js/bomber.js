@@ -19,6 +19,8 @@
     var turning = null;
     var spaceKey = null;
     var baddieCounter = 5;
+
+    var musicPlayNormal, musicLevelComplete, musicDead, musicBoom, musicSplat, musicBump;
     
     for(var i = 0; i < baddieCounter; ++i)
     {
@@ -33,12 +35,25 @@
         game.load.spritesheet('baddie', 'assets/baddie.png', 32,32);
         game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
         game.load.spritesheet('explosion', 'assets/explosion17.png', 64, 64);
+        game.load.audio('musicPN', 'assets/audio/-003-game-play-normal-.mp3');
+        game.load.audio('musicLC', 'assets/audio/-005-level-complete.mp3');
+        game.load.audio('musicDead', 'assets/audio/-009-dead.mp3');
+        game.load.audio('musicDead', 'assets/audio/-009-dead.mp3');
+        game.load.audio('musicBoom', 'assets/audio/bomb-03.mp3');
+        game.load.audio('musicSplat', 'assets/audio/splat.mp3');
+        game.load.audio('musicBump', 'assets/audio/bump-cut.mp3');
     }
     
     function Zombie(sprite) {
         this.sprite = sprite
+        
    
     }
+    
+    Zombie.prototype.Act = function() {
+        
+    }
+    
     
     function create() {
         map = game.add.tilemap('map');
@@ -61,7 +76,18 @@
             Zombies[i].animations.play('right');
         }
         
-        
+        musicPlayNormal = game.add.audio('musicPN');
+        musicLevelComplete = game.add.audio('musicLC');
+        musicDead = game.add.audio('musicDead');
+        musicBoom = game.add.audio('musicBoom');
+        musicSplat = game.add.audio('musicSplat');
+        musicBump = game.add.audio('musicBump');
+
+        musicBoom.volume = 0.15;
+        musicSplat.volume = 0.7;
+        musicBump.volume = 0.3;
+        musicPlayNormal.loop = true;
+        musicPlayNormal.play();
      
         player = game.add.sprite(48, 48, 'dude', 4);
         player.animations.add('left', [0, 1, 2, 3], 10, true);
@@ -74,19 +100,19 @@
         spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
         
         spaceKey.onDown.add(function() {
-        	if(player.alive) {
-	            var bomb = game.add.sprite(marker.x * 32 + 16, marker.y * 32 + 16, 'bomb', 0);
-	            bomb.anchor.set(0.5);
-	            bomb.scale.set(.40, .30);
-	            setTimeout(function() {                
-	                fallout(bomb);
-	                setTimeout(function() {
-	                    fallout(bomb);
-	                }, 25);
-	                boom(bomb);
-	                bomb.destroy();
-	            }, 1000);        
-	        }
+            if(player.alive) {
+                var bomb = game.add.sprite(marker.x * 32 + 16, marker.y * 32 + 16, 'bomb', 0);
+                bomb.anchor.set(0.5);
+                bomb.scale.set(.40, .30);
+                setTimeout(function() {                
+                    fallout(bomb);
+                    setTimeout(function() {
+                        fallout(bomb);
+                    }, 25);
+                    boom(bomb);
+                    bomb.destroy();
+                }, 1000);        
+            }
         }, this);
     }
     
@@ -113,7 +139,7 @@
         if(!player.alive) {  endGame("lose"); }
             
         // check for collisions
-        game.physics.arcade.collide(player, layer);
+        game.physics.arcade.collide(player, layer, function() { /*musicBump.play();*/ });
         
         for(var i = 0; i < baddieCounter; ++i)
             hitBaddie(Zombies[i]);
@@ -179,6 +205,7 @@
         
         if(isAZombie(sprite)) {
             game.physics.arcade.overlap(player, sprite, function() {
+                musicSplat.play();
                 player.kill();
             }, null, game);
         }
@@ -202,6 +229,8 @@
     
     //Pass this function a bomb!!!
     function boom(b){
+        musicBoom.play();
+
         var fireSprites = [];
         var x = getTileCoord(b).x;
         var y = getTileCoord(b).y;
@@ -213,7 +242,7 @@
             fireSprites[i].animations.add('left',[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],10,true);
             fireSprites[i].animations.play('left');
         }
-    	
+        
         setTimeout(function(){
             fireSprites.forEach(function(s){
                 s.destroy();
@@ -231,7 +260,7 @@
                     fallout(b);
                 });
             }, x * 400 + 200);
-        }	
+        }   
     }
     
 
@@ -364,7 +393,14 @@
     }
     
     function endGame(status) {
+
+        game.input.keyboard.removeKeyCapture(Phaser.Keyboard.SPACEBAR);
+        
+
+        musicPlayNormal.stop();
+
         game.paused = true;
+        game.sound.mute = false;
         clearAllTimeout();
         var text = game.add.text(0, game.camera.height / 3, "", {
             font: "129px Arial",
@@ -373,15 +409,19 @@
         });
         text.fixedToCamera = false;
         if(status === "win") {
+            musicLevelComplete.play();
             text.setText("You win!!!!!!");
         } else {
+            musicDead.play();
             text.setText("Game Over");        
         }
         setTimeout(function() {
             text.setText("");
+            musicLevelComplete.stop();
+            musicDead.stop();
             create();
             game.paused = false;
-        }, 2500);
+        }, 3000);
     }
     
     function fallout(b) {
@@ -395,12 +435,14 @@
     
     function checkFallout(sprite) {
         if(sprite.body.y >= marker.y && sprite.y <= (marker.y + 32)) {
-            if(sprite.body.x > (marker.x - 64) && sprite.body.x < (marker.x + 64)) {
+            if(sprite.body.x > (marker.x - 64) && sprite.body.x < (marker.x + 64) && sprite.alive) {
+                musicSplat.play();
                 sprite.kill();
             }
         }
         if(sprite.body.x >= marker.x && sprite.x <= (marker.x + 32)) {
-            if(sprite.body.y > (marker.y - 64) && sprite.body.y < (marker.y + 64)) {
+            if(sprite.body.y > (marker.y - 64) && sprite.body.y < (marker.y + 64) && sprite.alive) {
+                musicSplat.play();
                 sprite.kill();
             }
         }
