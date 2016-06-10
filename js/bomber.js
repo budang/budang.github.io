@@ -133,10 +133,6 @@
     }
     
     function update() {
-        if(!$("#game_window").hasClass("active")) {
-            musicPlayNormal.pause();
-        }
-
         $("#game").click(function() {
             game.sound.mute = false;
 
@@ -152,6 +148,9 @@
                     musicLevelComplete.resume();
             }
         });
+
+        if(!$("#game_window").hasClass("active"))
+            musicPlayNormal.pause();
 
         $("#game_window").find(".min").click(function() {
             game.paused = true;
