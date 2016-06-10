@@ -133,7 +133,7 @@
     }
     
     function update() {
-        if($("#game_window").hasClass("active")) {
+        if(!$("#game_window").hasClass("active")) {
             musicPlayNormal.pause();
         }
 
