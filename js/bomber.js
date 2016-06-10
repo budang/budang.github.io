@@ -139,18 +139,30 @@
             if(!$("#game_window").hasClass("active"))
                 musicPlayNormal.play();
 
-            if(game.paused)
+            if(game.paused) {
                 game.paused = false;
+
+                if(!player.alive)
+                    musicDead.resume();
+                else if(!anyZombiesAlive() && player.alive)
+                    musicLevelComplete.resume();
+            }
         });
 
         $("#game_window").find(".min").click(function() {
             game.paused = true;
-            game.sound.mute = true;
+
+            if(!player.alive)
+                musicDead.pause();
+            else if(!anyZombiesAlive() && player.alive)
+                musicLevelComplete.pause();
+            
         });
 
         $("#game_window").find(".exit").click(function() {
             game.paused = true;
-            game.sound.mute = true;
+            musicDead.stop();
+            musicLevelComplete.stop();
             create();
         });
 
@@ -440,6 +452,7 @@
             musicLevelComplete.stop();
             musicDead.stop();
             create();
+            musicPlayNormal.play();
             game.paused = false;
         }, 3000);
     }
