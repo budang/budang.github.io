@@ -147,7 +147,7 @@
 
         $("#game_window").find(".exit").click(function() {
             game.paused = true;
-            // create();
+            create();
         });
 
         AnimateZombie();
