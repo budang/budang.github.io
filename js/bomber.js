@@ -87,7 +87,6 @@
         musicSplat.volume = 0.7;
         musicBump.volume = 0.3;
         musicPlayNormal.loop = true;
-        musicPlayNormal.play();
      
         player = game.add.sprite(48, 48, 'dude', 4);
         player.animations.add('left', [0, 1, 2, 3], 10, true);
@@ -114,9 +113,6 @@
                 }, 1000);        
             }
         }, this);
-
-        if(!$("#game_window").hasClass("active"))
-            game.pause = true;
     }
     
     function rand(min, max) {
@@ -138,6 +134,9 @@
     
     function update() {
         $("#game").click(function() {
+            if(!$("#game_window").hasClass("active"))
+                musicPlayNormal.play();
+
             if(game.paused)
                 game.paused = false;
         });
@@ -146,10 +145,10 @@
             game.paused = true;
         });
 
-        $("#game_window").find(".exit").click(function() {
-            game.paused = true;
-            create();
-        });
+        // $("#game_window").find(".exit").click(function() {
+        //     game.paused = true;
+            // create();
+        // });
 
         AnimateZombie();
            
