@@ -133,6 +133,10 @@
     }
     
     function update() {
+        if($("#game_window").hasClass("active")) {
+            musicPlayNormal.pause();
+        }
+
         $("#game").click(function() {
             game.sound.mute = false;
 
