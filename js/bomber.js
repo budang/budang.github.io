@@ -136,7 +136,7 @@
         $("#game").click(function() {
             game.sound.mute = false;
 
-            if(!$("#game_window").hasClass("active"))
+            if($("#game_window").hasClass("active"))
                 musicPlayNormal.play();
 
             if(game.paused) {
