@@ -134,6 +134,8 @@
     
     function update() {
         $("#game").click(function() {
+            game.sound.mute = false;
+
             if(!$("#game_window").hasClass("active"))
                 musicPlayNormal.play();
 
@@ -143,10 +145,12 @@
 
         $("#game_window").find(".min").click(function() {
             game.paused = true;
+            game.sound.mute = true;
         });
 
         $("#game_window").find(".exit").click(function() {
             game.paused = true;
+            game.sound.mute = true;
             create();
         });
 
