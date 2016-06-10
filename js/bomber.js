@@ -134,6 +134,21 @@
     }
     
     function update() {
+        $("#game").click(function() {
+            if(game.paused)
+                game.paused = false;
+        });
+
+        $("#game_window").find(".min").click(function() {
+            game.paused = true;
+        });
+
+        $("#game_window").find(".exit").click(function() {
+            game.paused = true;
+            create();
+            game.paused = false;
+        });
+
         AnimateZombie();
            
         if(!player.alive) {  endGame("lose"); }
