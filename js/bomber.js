@@ -145,10 +145,10 @@
             game.paused = true;
         });
 
-        // $("#game_window").find(".exit").click(function() {
-        //     game.paused = true;
+        $("#game_window").find(".exit").click(function() {
+            game.paused = true;
             // create();
-        // });
+        });
 
         AnimateZombie();
            
