@@ -114,6 +114,9 @@
                 }, 1000);        
             }
         }, this);
+
+        if(!$("#game_window").hasClass("active"))
+            game.pause = true;
     }
     
     function rand(min, max) {
@@ -146,7 +149,6 @@
         $("#game_window").find(".exit").click(function() {
             game.paused = true;
             create();
-            game.paused = false;
         });
 
         AnimateZombie();
