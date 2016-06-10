@@ -73,6 +73,21 @@ body
     text-decoration: none;
 }
 
+a.no-style {
+    color: white;
+    text-decoration: none;   
+}
+
+/*.no-style:hover {
+    color: white;
+    text-decoration: none;   
+}
+
+.no-style:visited {
+    color: white;
+    text-decoration: none;   
+}*/
+
 #status
 {
     float: right;    
