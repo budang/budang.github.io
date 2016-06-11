@@ -139,33 +139,34 @@
             game.sound.mute = true;
         }
 
-        $("#game_window").find(".exit").click(function(e) {
+        // $("#game_window").find(".exit").click(function(e) {
+        //     e.stopPropagation();
+        //     game.sound.mute = true;
+        //     console.log("closing window; mute music");
+        //     if($("#game-vol").hasClass("glyphicon-volume-off")) {
+        //         $(this).removeClass("glyphicon-volume-off");
+        //         $(this).addClass("glyphicon-volume-up");
+        //     } else {
+        //         $(this).removeClass("glyphicon-volume-up");
+        //         $(this).addClass("glyphicon-volume-off");
+        //     }   
+        // });
+
+        $(".glyphicon-volume-off").click(function(e) {
             e.stopPropagation();
-            game.sound.mute = true;
-            console.log("closing window; mute music");
-            if($("#game-vol").hasClass("glyphicon-volume-off")) {
-                $(this).removeClass("glyphicon-volume-off");
-                $(this).addClass("glyphicon-volume-up");
-            } else {
-                $(this).removeClass("glyphicon-volume-up");
-                $(this).addClass("glyphicon-volume-off");
-            }   
+            console.log("unmuting");
+            game.sound.mute = false;
+            $("#game-vol").removeClass("glyphicon-volume-off");
+            $("#game-vol").addClass("glyphicon-volume-up");
         });
 
-        $("#game-vol").click(function(e) {
+        $(".glyphicon-volume-up").click(function(e) {
             e.stopPropagation();
-            if($(this).hasClass("glyphicon-volume-off")) {
-                console.log("unmuting");
-                game.sound.mute = false;
-                $(this).removeClass("glyphicon-volume-off");
-                $(this).addClass("glyphicon-volume-up");
-            } /*else {
-                console.log("muting");
-                game.sound.mute = true;
-                $(this).removeClass("glyphicon-volume-up");
-                $(this).addClass("glyphicon-volume-off");
-            }*/
-        });
+            console.log("muting");
+            game.sound.mute = true;
+            $("#game-vol").removeClass("glyphicon-volume-up");
+            $("#game-vol").addClass("glyphicon-volume-off");
+        }
 
         AnimateZombie();
            
