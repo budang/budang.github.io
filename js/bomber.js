@@ -136,7 +136,7 @@
     
     function update() {
         $("#game-vol").click(function() {
-            if($(this)).hasClass("glyphicon-volume-off") {
+            if($(this).hasClass("glyphicon-volume-off")) {
                 game.sound.mute = false;
                 $(this).removeClass("glyphicon-volume-off");
                 $(this).addClass("glyphicon-volume-up");
