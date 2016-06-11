@@ -134,7 +134,7 @@
     }
     
     function update() {
-        if(!$("#game_window").hasClass("opened")) {
+        if(!($("#game_window").hasClass("opened"))) {
             console.log("loading page; sound is muted");
             game.sound.mute = true;
         }
