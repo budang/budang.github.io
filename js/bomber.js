@@ -21,7 +21,8 @@
     var baddieCounter = 5;
 
     var musicPlayNormal, musicLevelComplete, musicDead, musicBoom, musicSplat, musicBump;
-    
+    var mute = true;
+
     for(var i = 0; i < baddieCounter; ++i)
     {
         Zombies[i] = null;
@@ -87,6 +88,8 @@
         musicSplat.volume = 0.7;
         musicBump.volume = 0.3;
         musicPlayNormal.loop = true;
+        if(mute)
+            game.sound.mute = true;
         musicPlayNormal.play();
      
         player = game.add.sprite(48, 48, 'dude', 4);
@@ -134,10 +137,15 @@
     }
     
     function update() {
-        if(!($("#game_window").hasClass("opened"))) {
-            // console.log("loading page; sound is muted");
-            game.sound.mute = true;
-        }
+        // if(!($("#game_window").hasClass("opened"))) {
+        //     // console.log("loading page; sound is muted");
+        //     mute = true;
+        //     game.sound.mute = true;
+        //     if($("#game-vol").hasClass("glyphicon-volume-up")) {
+        //         $(this).removeClass("glyphicon-volume-up");
+        //         $(this).addClass("glyphicon-volume-off");
+        //     }
+        // }
 
         // $("#game_window").find(".exit").click(function(e) {
         //     e.stopPropagation();
@@ -153,16 +161,20 @@
         // });
 
         $(".glyphicon-volume-off").click(function(e) {
+            e.preventDefault();
             e.stopPropagation();
             console.log("unmuting");
+            mute = false;
             game.sound.mute = false;
             $("#game-vol").removeClass("glyphicon-volume-off");
             $("#game-vol").addClass("glyphicon-volume-up");
         });
 
         $(".glyphicon-volume-up").click(function(e) {
+            e.preventDefault();
             e.stopPropagation();
             console.log("muting");
+            mute = true;
             game.sound.mute = true;
             $("#game-vol").removeClass("glyphicon-volume-up");
             $("#game-vol").addClass("glyphicon-volume-off");
@@ -434,7 +446,10 @@
         musicPlayNormal.stop();
 
         game.paused = true;
-        game.sound.mute = false;
+
+        if(!mute)
+            game.sound.mute = false;
+        
         clearAllTimeout();
         var text = game.add.text(0, game.camera.height / 3, "", {
             font: "129px Arial",
