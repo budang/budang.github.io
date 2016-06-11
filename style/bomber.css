@@ -23,3 +23,11 @@ p
     /*top: 580px; right: 0; left: 0;*/
     /*position: relative;*/
 }
+
+#game-vol {
+    float: left;
+}
+
+#game-vol:hover {
+    cursor: pointer;
+}
