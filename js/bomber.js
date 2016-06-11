@@ -141,10 +141,8 @@
             // console.log("loading page; sound is muted");
             mute = true;
             game.sound.mute = true;
-            if($("#game-vol").hasClass("glyphicon-volume-up")) {
-                $(this).removeClass("glyphicon-volume-up");
-                $(this).addClass("glyphicon-volume-off");
-            }
+            $("#game-vol").removeClass("glyphicon-volume-up");
+            $("#game-vol").addClass("glyphicon-volume-off");
         }
 
         // $("#game_window").find(".exit").click(function(e) {
