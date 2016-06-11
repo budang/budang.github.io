@@ -137,7 +137,7 @@
     }
     
     function update() {
-        $("#game_window").find(".exit").click(function() {
+        $("#game_window").find(".exit, .min").click(function() {
             if(!mute) {    
                 mute = true;
                 game.sound.mute = true;
