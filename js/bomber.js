@@ -144,7 +144,7 @@
                 $("#game-vol").removeClass("glyphicon-volume-up");
                 $("#game-vol").addClass("glyphicon-volume-off");
             }
-        }
+        });
 
         // if(!($("#game_window").hasClass("opened")) && !mute) {
         //     // console.log("loading page; sound is muted");
