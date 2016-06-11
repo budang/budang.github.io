@@ -166,7 +166,7 @@
             game.sound.mute = true;
             $("#game-vol").removeClass("glyphicon-volume-up");
             $("#game-vol").addClass("glyphicon-volume-off");
-        }
+        });
 
         AnimateZombie();
            
