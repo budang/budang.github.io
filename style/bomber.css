@@ -24,9 +24,9 @@ p
     /*position: relative;*/
 }
 
-#game-vol {
+#game_window span {
     float: left;
     cursor: pointer;
-    font-size: 24 px;
-    margin-left: 10px;
+    font-size: 24px;
+    margin-left: 7px;
 }

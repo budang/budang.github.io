@@ -135,11 +135,12 @@
     
     function update() {
         if(!($("#game_window").hasClass("opened"))) {
-            console.log("loading page; sound is muted");
+            // console.log("loading page; sound is muted");
             game.sound.mute = true;
         }
 
-        $("#game_window").find(".exit").click(function() {
+        $("#game_window").find(".exit").click(function(e) {
+            e.stopPropagation();
             game.sound.mute = true;
             console.log("closing window; mute music");
             if($("#game-vol").hasClass("glyphicon-volume-off")) {
@@ -151,7 +152,8 @@
             }   
         });
 
-        $("#game-vol").click(function() {
+        $("#game-vol").click(function(e) {
+            e.stopPropagation();
             if($(this).hasClass("glyphicon-volume-off")) {
                 console.log("unmuting");
                 game.sound.mute = false;
