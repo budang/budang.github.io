@@ -159,12 +159,12 @@
                 game.sound.mute = false;
                 $(this).removeClass("glyphicon-volume-off");
                 $(this).addClass("glyphicon-volume-up");
-            } else {
+            } /*else {
                 console.log("muting");
                 game.sound.mute = true;
                 $(this).removeClass("glyphicon-volume-up");
                 $(this).addClass("glyphicon-volume-off");
-            }
+            }*/
         });
 
         AnimateZombie();
