@@ -146,29 +146,7 @@
             }
         });
 
-        // if(!($("#game_window").hasClass("opened")) && !mute) {
-        //     // console.log("loading page; sound is muted");
-        //     mute = true;
-        //     game.sound.mute = true;
-        //     $("#game-vol").removeClass("glyphicon-volume-up");
-        //     $("#game-vol").addClass("glyphicon-volume-off");
-        // }
-
-        // $("#game_window").find(".exit").click(function(e) {
-        //     e.stopPropagation();
-        //     game.sound.mute = true;
-        //     console.log("closing window; mute music");
-        //     if($("#game-vol").hasClass("glyphicon-volume-off")) {
-        //         $(this).removeClass("glyphicon-volume-off");
-        //         $(this).addClass("glyphicon-volume-up");
-        //     } else {
-        //         $(this).removeClass("glyphicon-volume-up");
-        //         $(this).addClass("glyphicon-volume-off");
-        //     }   
-        // });
-
         $(".glyphicon-volume-off").click(function() {
-            // console.log("unmuting");
             mute = false;
             game.sound.mute = false;
             $("#game-vol").removeClass("glyphicon-volume-off");
@@ -176,7 +154,6 @@
         });
 
         $(".glyphicon-volume-up").click(function() {
-            // console.log("muting");
             mute = true;
             game.sound.mute = true;
             $("#game-vol").removeClass("glyphicon-volume-up");
