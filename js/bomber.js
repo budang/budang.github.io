@@ -88,7 +88,6 @@
         musicBump.volume = 0.3;
         musicPlayNormal.loop = true;
         musicPlayNormal.play();
-        game.sound.mute = true;
      
         player = game.add.sprite(48, 48, 'dude', 4);
         player.animations.add('left', [0, 1, 2, 3], 10, true);
@@ -135,12 +134,31 @@
     }
     
     function update() {
+        if(!("#game_window").hasClass("opened")) {
+            console.log("loading page; sound is muted");
+            game.sound.mute = true;
+        }
+
+        $("#game_window").find(".exit").click(function() {
+            game.sound.mute = true;
+            console.log("closing window; mute music");
+            if($("#game-vol").hasClass("glyphicon-volume-off")) {
+                $(this).removeClass("glyphicon-volume-off");
+                $(this).addClass("glyphicon-volume-up");
+            } else {
+                $(this).removeClass("glyphicon-volume-up");
+                $(this).addClass("glyphicon-volume-off");
+            }   
+        });
+
         $("#game-vol").click(function() {
             if($(this).hasClass("glyphicon-volume-off")) {
+                console.log("unmuting");
                 game.sound.mute = false;
                 $(this).removeClass("glyphicon-volume-off");
                 $(this).addClass("glyphicon-volume-up");
             } else {
+                console.log("muting");
                 game.sound.mute = true;
                 $(this).removeClass("glyphicon-volume-up");
                 $(this).addClass("glyphicon-volume-off");

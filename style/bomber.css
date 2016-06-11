@@ -26,8 +26,7 @@ p
 
 #game-vol {
     float: left;
-}
-
-#game-vol:hover {
     cursor: pointer;
+    font-size: 24 px;
+    margin: 10px 0 10px 0;
 }
