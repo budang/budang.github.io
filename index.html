@@ -27,6 +27,7 @@
     <script type="text/javascript" src="js/slider.js"></script>
     <script type="text/javascript" src="js/window.js"></script>
     <script type="text/javascript" src="js/header.js"></script>
+    <!--<script type="text/javascript" src="js/shutdown.js"></script>-->
     <script type="text/javascript" src="js/timeoutCleaner.js"></script>
     
     <script>
@@ -228,9 +229,20 @@
     <div id="shutdown">
         <div class="container outer">
             <div class="container inner">
-                Restart
+                <div id="restart">Restart</div>
             </div>
         </div>
+        <script>
+            $(document).ready(function() {
+                $("#power").click(function() {
+                    $("#shutdown").css("display", "block");
+                });
+
+                $("#restart").click(function() {
+                    window.location.reload();
+                });
+            });
+        </script>
     </div>
 
 </body>

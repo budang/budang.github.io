@@ -5,6 +5,7 @@
 	opacity: 0.4;
 	position: absolute;
 	z-index: 999999;
+	display: none;
 }
 
 .container {
@@ -27,4 +28,11 @@
 	width: 385px;
 	height: 285px;
 	border: 2px solid white !important;
+}
+
+#restart {
+	background-color: red;
+	width: 100px;
+	height: 100px;
+	cursor: pointer;
 }
