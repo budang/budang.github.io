@@ -1,0 +1,30 @@
+#shutdown {
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 0.4;
+	position: absolute;
+	z-index: 999999;
+}
+
+.container {
+	position: absolute;
+	opacity: 1.0;
+	border-radius: 5px;
+    /*border: 10px solid white !important;*/
+    top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.outer {
+	width: 400px;
+	height: 300px;
+	border: 3px solid white !important;
+}
+
+.inner {
+	width: 385px;
+	height: 285px;
+	border: 2px solid white !important;
+}
