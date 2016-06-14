@@ -229,8 +229,16 @@
     <div id="shutdown">
         <div class="container outer">
             <div class="container inner">
-                <div id="restart">
-                    <span class="glyphicon glyphicon-repeat"></span>
+                <div class="innerinner">
+                    <p>Are you sure want to exit this page?</p>
+                    <div id="shutdown-menu">
+                        <div id="restart">
+                            <span class="glyphicon glyphicon-repeat"></span>
+                        </div>
+                        <div id="quit">
+                            <span class="glyphicon glyphicon-off glyphicon-off-shutdown"></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -242,6 +250,10 @@
 
                 $("#restart").click(function() {
                     window.location.reload();
+                });
+
+                $("#quit").click(function() {
+                    window.close();
                 });
             });
         </script>

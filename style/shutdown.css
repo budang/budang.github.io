@@ -7,6 +7,10 @@
 	display: none;
 }
 
+#shutdown p {
+	text-align: left;
+}
+
 .container {
 	position: absolute;
 	border-radius: 5px;
@@ -29,23 +33,43 @@
 	background-color: rgba(102, 0, 0, 0.6);
 }
 
-#restart {
+.innerinner {
 	position: absolute;
-	width: 100px;
-	height: 100px;
-	cursor: pointer;
-	border-radius: 10px;
-    top: 50%;
+	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	border: 1px solid white;
+	width: 80%;
+	height: 80%;
 }
 
-.glyphicon-repeat {
+#shutdown-menu {
 	position: absolute;
-    top: 50%;
+	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	font-size: 48px;
+	width: 100%;
+	text-align: center;
+	margin-top: 40px;
+}
+
+#restart, #quit {
+	width: 130px;
+	height: 130px;
+	cursor: pointer;
+	border-radius: 10px;
+	border: 1px solid white;
+	display: inline-block;
+}
+
+#restart {
+	margin-right: 30px;
+
+}
+
+.glyphicon-repeat, .glyphicon-off-shutdown {
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 64px;
 	color: white;
 }
