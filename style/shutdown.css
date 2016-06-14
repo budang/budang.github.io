@@ -1,8 +1,7 @@
 #shutdown {
 	width: 100%;
 	height: 100%;
-	background-color: black;
-	opacity: 0.4;
+	background-color: rgba(0, 0, 0, 0.4);;
 	position: absolute;
 	z-index: 999999;
 	display: none;
@@ -10,7 +9,6 @@
 
 .container {
 	position: absolute;
-	opacity: 1.0;
 	border-radius: 5px;
     /*border: 10px solid white !important;*/
     top: 50%;
@@ -28,11 +26,26 @@
 	width: 385px;
 	height: 285px;
 	border: 2px solid white !important;
+	background-color: rgba(102, 0, 0, 0.6);
 }
 
 #restart {
-	background-color: red;
+	position: absolute;
 	width: 100px;
 	height: 100px;
 	cursor: pointer;
+	border-radius: 10px;
+    top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: 1px solid white;
+}
+
+.glyphicon-repeat {
+	position: absolute;
+    top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 48px;
+	color: white;
 }
