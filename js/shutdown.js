@@ -27,7 +27,7 @@ $(document).ready(function() {
 
     	setTimeout(function() {
         	window.close();
-    	}, 1000);
+    	}, 700);
     });
 
     $(".exit-shutdown").click(function() {
