@@ -82,10 +82,13 @@
 #restart, #quit {
 	width: 130px;
 	height: 130px;
-	cursor: pointer !important;
 	border-radius: 10px;
 	border: 1px solid white;
 	display: inline-block;
+}
+
+.pointer-cursor {
+	cursor: pointer !important;
 }
 
 #restart {
@@ -100,4 +103,8 @@
 	font-size: 64px;
 	color: white;
 	cursor: pointer !important;
+}
+
+.wait-cursor {
+	cursor: wait !important;
 }

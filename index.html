@@ -27,7 +27,7 @@
     <script type="text/javascript" src="js/slider.js"></script>
     <script type="text/javascript" src="js/window.js"></script>
     <script type="text/javascript" src="js/header.js"></script>
-    <!--<script type="text/javascript" src="js/shutdown.js"></script>-->
+    <script type="text/javascript" src="js/shutdown.js"></script>
     <script type="text/javascript" src="js/timeoutCleaner.js"></script>
     
     <script>
@@ -236,10 +236,10 @@
                     <div class="innerinner">
                         <p>Thanks for visiting, I hope you enjoyed it! Are you sure want to exit this page?</p>
                         <div id="shutdown-menu">
-                            <div id="restart">
+                            <div id="restart" class="pointer-cursor">
                                 <span class="glyphicon glyphicon-repeat"></span>
                             </div>
-                            <div id="quit">
+                            <div id="quit" class="pointer-cursor">
                                 <span class="glyphicon glyphicon-off glyphicon-off-shutdown"></span>
                             </div>
                         </div>
@@ -247,35 +247,6 @@
                 </div>
             </div>
         </div>
-        <script>
-            $(document).ready(function() {
-                $("#power").click(function() {
-                    $("#shutdown").css("display", "block");
-                });
-
-                $("#restart, #quit").mouseenter(function() {
-                    $(this).css("background-color", "white");
-                    $(this).find(".glyphicon").css("color", "rgba(102, 0, 0, 0.8)");
-                });
-
-                $("#restart, #quit").mouseleave(function() {
-                    $(this).css("background-color", "transparent");
-                    $(this).find(".glyphicon").css("color", "white");
-                });
-
-                $("#restart").click(function() {
-                    window.location.reload();
-                });
-
-                $("#quit").click(function() {
-                    window.close();
-                });
-
-                $(".exit-shutdown").click(function() {
-                   $("#shutdown").css("display", "none"); 
-                });
-            });
-        </script>
     </div>
 
 </body>
