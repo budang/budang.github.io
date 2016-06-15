@@ -227,16 +227,21 @@
     </div>
 
     <div id="shutdown">
-        <div class="container outer">
-            <div class="container inner">
-                <div class="innerinner">
-                    <p>Are you sure want to exit this page?</p>
-                    <div id="shutdown-menu">
-                        <div id="restart">
-                            <span class="glyphicon glyphicon-repeat"></span>
-                        </div>
-                        <div id="quit">
-                            <span class="glyphicon glyphicon-off glyphicon-off-shutdown"></span>
+        <div class="container outerouter">
+            <div class="exit-shutdown">
+                <span class="glyphicon glyphicon-remove"></span>
+            </div>
+            <div class="container outer">
+                <div class="container inner">
+                    <div class="innerinner">
+                        <p>Thanks for visiting, I hope you enjoyed it! Are you sure want to exit this page?</p>
+                        <div id="shutdown-menu">
+                            <div id="restart">
+                                <span class="glyphicon glyphicon-repeat"></span>
+                            </div>
+                            <div id="quit">
+                                <span class="glyphicon glyphicon-off glyphicon-off-shutdown"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -248,12 +253,26 @@
                     $("#shutdown").css("display", "block");
                 });
 
+                $("#restart, #quit").mouseenter(function() {
+                    $(this).css("background-color", "white");
+                    $(this).find(".glyphicon").css("color", "rgba(102, 0, 0, 0.8)");
+                });
+
+                $("#restart, #quit").mouseleave(function() {
+                    $(this).css("background-color", "transparent");
+                    $(this).find(".glyphicon").css("color", "white");
+                });
+
                 $("#restart").click(function() {
                     window.location.reload();
                 });
 
                 $("#quit").click(function() {
                     window.close();
+                });
+
+                $(".exit-shutdown").click(function() {
+                   $("#shutdown").css("display", "none"); 
                 });
             });
         </script>

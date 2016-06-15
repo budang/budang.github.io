@@ -13,17 +13,39 @@
 
 .container {
 	position: absolute;
-	border-radius: 5px;
+	border-radius: 4px;
     /*border: 10px solid white !important;*/
     top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
 
+.outerouter {
+	width: 446px;
+	height: 311px;
+}
+
+.exit-shutdown {
+	border-radius: 50%;
+	border: 3.5px solid white !important;
+	height: 28px;
+	width: 28px;
+	text-align: center;
+	background-color: rgb(102, 0, 0);
+	cursor: pointer !important;
+}
+
+.glyphicon-remove {
+	color: white;
+	cursor: pointer !important;
+	margin: 2px 0 0 1px;
+}
+
 .outer {
 	width: 400px;
 	height: 300px;
 	border: 3px solid white !important;
+	z-index: -1;
 }
 
 .inner {
@@ -31,6 +53,11 @@
 	height: 285px;
 	border: 2px solid white !important;
 	background-color: rgba(102, 0, 0, 0.6);
+}
+
+.inner p {
+	font-size: 22px;
+	margin-top: -5px;
 }
 
 .innerinner {
@@ -49,13 +76,13 @@
 	transform: translate(-50%, -50%);
 	width: 100%;
 	text-align: center;
-	margin-top: 40px;
+	margin-top: 50px;
 }
 
 #restart, #quit {
 	width: 130px;
 	height: 130px;
-	cursor: pointer;
+	cursor: pointer !important;
 	border-radius: 10px;
 	border: 1px solid white;
 	display: inline-block;
@@ -72,4 +99,5 @@
 	transform: translate(-50%, -50%);
 	font-size: 64px;
 	color: white;
+	cursor: pointer !important;
 }
