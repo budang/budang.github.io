@@ -121,7 +121,7 @@
 #internet_window
 {
     height: 450px;
-    width: 720px;
+    width: 560px;
     background-image: url("https://41.media.tumblr.com/52034a07cb604b7379560319251f80b2/tumblr_nec8y8JlIb1tij7i0o1_1280.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -163,7 +163,7 @@
 #shortcuts
 {
     margin: auto;
-    width: 600px;
+    width: 85%;
 }
 
 .con_icon
