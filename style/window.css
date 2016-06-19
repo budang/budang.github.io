@@ -166,11 +166,17 @@
     width: 85%;
 }
 
+#shortcuts div {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+}
+
 .con_icon
 {
-    display: inline-box;
+    /*display: inline-box;
     float: left;
-    margin: 10px;
+    margin: 10px;*/
 }
 
 .con_icon img
