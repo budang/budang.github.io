@@ -91,10 +91,10 @@
 	cursor: pointer !important;
 }
 
-#restart {
+/*#restart {
 	margin-right: 30px;
 
-}
+}*/
 
 .glyphicon-repeat, .glyphicon-off-shutdown {
 	position: absolute;

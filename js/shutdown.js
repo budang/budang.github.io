@@ -17,18 +17,18 @@ $(document).ready(function() {
         window.location.reload();
     });
 
-    $("#quit").click(function() {
-    	$("*").off("click");
-    	$("*").off("mouseenter");
-    	$("*").off("mouseleave");
+    // $("#quit").click(function() {
+    // 	$("*").off("click");
+    // 	$("*").off("mouseenter");
+    // 	$("*").off("mouseleave");
 
-        $("#quit, #restart").removeClass("pointer-cursor");
-        $("*").addClass("wait-cursor");
+    //     $("#quit, #restart").removeClass("pointer-cursor");
+    //     $("*").addClass("wait-cursor");
 
-    	setTimeout(function() {
-        	window.close();
-    	}, 700);
-    });
+    // 	setTimeout(function() {
+    //     	window.close();
+    // 	}, 700);
+    // });
 
     $(".exit-shutdown").click(function() {
 		$("#shutdown").css("display", "none"); 
