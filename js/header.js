@@ -42,10 +42,28 @@ $(document).ready(function() {
         $("#time").css("display", "inline");
     }),
    
+    (function() {
+        function fullScreenChange() {
+            if(document.webkitIsFullScreen || document.mozFullScreen || document.msFullscreenElement) {
+                if($("#resize").hasClass("glyphicon-resize-full")) {
+                    $("#resize").removeClass("glyphicon-resize-full");
+                    $("#resize").addClass("glyphicon-resize-small");
+                }
+            } else if($("#resize").hasClass("glyphicon-resize-small")) {
+                $("#resize").removeClass("glyphicon-resize-small");
+                $("#resize").addClass("glyphicon-resize-full");
+            }
+        };
+        
+        // http://stackoverflow.com/questions/10706070/how-to-detect-when-a-page-exits-fullscreen
+        document.addEventListener('webkitfullscreenchange', fullScreenChange, false);
+        document.addEventListener('mozfullscreenchange', fullScreenChange, false);
+        document.addEventListener('fullscreenchange', fullScreenChange, false);
+        document.addEventListener('MSFullscreenChange', fullScreenChange, false);
+    })(),
+
     $("#resize").click(function() {
         if($(this).hasClass("glyphicon-resize-full")) {
-            $(this).removeClass("glyphicon-resize-full");
-            $(this).addClass("glyphicon-resize-small");
             var element = document.documentElement;
             if(element.requestFullscreen) {
                 element.requestFullscreen();
@@ -57,8 +75,6 @@ $(document).ready(function() {
                 element.msRequestFullscreen();
             }
         } else {
-            $(this).removeClass("glyphicon-resize-small");
-            $(this).addClass("glyphicon-resize-full");
             if(document.exitFullscreen) {
                 document.exitFullscreen();
             } else if(document.mozCancelFullScreen) {
