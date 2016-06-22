@@ -18,7 +18,6 @@
     <link rel="stylesheet" type="text/css" href="style/window.css">
     <link rel="stylesheet" type="text/css" href="style/shutdown.css">
     
-    <!-- <script src="js/background.js"></script>-->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/phaser/2.3.0/phaser.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
@@ -39,15 +38,6 @@
             $("#searchbar").keypress(function(e) {
                 var search = $("#searchbar").val();
                 if(e.which === 13 && search) {
-                    // check if url exists; if not, do google search
-                    // $.get(search, function() {
-                    //     var win = window.open(search, '_blank');
-                    //     win.focus();
-                    // }).fail(function() {
-                    //     var url = "https://www.google.com/search?q=" + encodeURIComponent(search);
-                    //     var win = window.open(url, '_blank');
-                    //     win.focus();
-                    // });
                     var url = "https://www.google.com/search?q=" + encodeURIComponent(search);
                     var win = window.open(url, '_blank');
                     win.focus();
@@ -70,9 +60,6 @@
                 <span id="power" class="glyphicon glyphicon-off"></span>
                 <span id="time" class="glyphicon glyphicon-time"></span>
                 <span id="time2"></span>
-                <!--<span id="signal" class="glyphicon glyphicon-signal"></span>-->
-                <!--<span id="volume" class="glyphicon glyphicon-volume-up"></span>-->
-                <!--<span id="battery" class="icon ion-battery-charging"></span>-->
                 <span id="resize" class="glyphicon glyphicon-resize-full"></span>
             </p>
         </div>
@@ -106,15 +93,17 @@
                     </div>
                 </div>
 	        </div>
-	        <!--<div id="about_window" class="resize-drag window">-->
-	        <!--    <div class="topbar">-->
-         <!--           <span href="" class="exit">[x]</span>-->
-                    <!--<span href="">[-]</span>-->
-         <!--           <span href="" class="max">[+]</span>-->
-                    <!--<span href="">[x]</span>-->
-         <!--           <span href="" class="min">[-]</span>-->
-         <!--       </div>-->
-	        <!--</div>-->
+	        <!--
+            <div id="about_window" class="resize-drag window">
+	            <div class="topbar">
+                    <span href="" class="exit">[x]</span>
+                    <span href="">[-]</span>
+                    <span href="" class="max">[+]</span>
+                    <span href="">[x]</span>
+                    <span href="" class="min">[-]</span>
+                </div>
+	        </div>
+            -->
 	        <div id="internet_window" class="resize-drag window">
 	            <div class="topbar">
                     <button class="exit windnav">x</button>
@@ -146,11 +135,6 @@
                                     <img src="assets/logos/octocat.png" id="gh_icon" align="middle" alt="github">
                                 </a>
                             </div>
-                            <!-- <div class="con_icon" id="twit">
-                                <a href="https://twitter.com/_bdang" target="_blank" class="con_link">
-                                    <img src="assets/logos/twitter.png" id="twit_icon" align="middle" alt="twitter">
-                                </a>
-                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -165,17 +149,10 @@
                     <!-- <iframe src="https://docs.google.com/presentation/d/12XkbVGGipK6UxG_LYBXT0K_KwtY-VZSzEvv2F_rXVao/embed?start=false&loop=true&delayms=60000" frameborder="0" width="560" height="400" allowfullscreen="false" mozallowfullscreen="false" webkitallowfullscreen="false"></iframe> -->
                     <ul id="image_slider">
                         <li><img src="assets/slides/zoo.jpg" class="slide_img" alt="img"></li>
-                        <!-- <li><img src="assets/slides/catv.jpg" class="slide_img" alt="img"></li> -->
                         <li><img src="assets/slides/iceskate.jpg" class="slide_img" alt="img"></li>
-                        <!-- <li><img src="assets/slides/sfdragon.jpg" class="slide_img" alt="img"></li> -->
                         <li><img src="assets/slides/chauma.jpg" class="slide_img" alt="img"></li>
-                        <!-- <li><img src="assets/slides/sflion.jpg" class="slide_img" alt="img"></li> -->
-                        <!-- <li><img src="assets/slides/lunch.jpg" class="slide_img" alt="img"></li> -->
-                        <!-- <li><img src="assets/slides/zilker.jpg" class="slide_img" alt="img"></li> -->
                         <li><img src="assets/slides/sfteam.jpg" class="slide_img" alt="img"></li>
-                        <!-- <li><img src="assets/slides/sshd.jpg" class="slide_img" alt="img"></li>                 -->
                         <li><img src="assets/slides/miranda.jpg" class="slide_img" alt="img"></li>                
-                        <!-- <li><img src="assets/slides/connie.jpg" class="slide_img" alt="img"></li> -->
                         <li><img src="assets/slides/jong.jpg" class="slide_img" alt="img"></li>
                     </ul>
                     <span class="nvgt" id="prev"></span>
