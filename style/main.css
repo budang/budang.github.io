@@ -46,8 +46,6 @@ body
     background: -o-linear-gradient(Gray, #303030);
     background: -moz-linear-gradient(Gray, #303030);
     background: linear-gradient(Gray, #303030);
-    /*float: left;*/
-    /*margin: 5px 5px;*/
     color: White;
     z-index: 99999;
     -webkit-box-shadow: 0 1px 1px black;
@@ -78,31 +76,15 @@ a.no-style {
     text-decoration: none;   
 }
 
-/*.no-style:hover {
-    color: white;
-    text-decoration: none;   
-}
-
-.no-style:visited {
-    color: white;
-    text-decoration: none;   
-}*/
-
 #status
 {
     float: right;    
-}
-
-#status p
-{
-    /*text-align: right;*/
 }
 
 #status span
 {
     margin-left: 10px;
     cursor: pointer;
-    /*text-align: right;*/
     float: right;
 }
 
@@ -110,21 +92,6 @@ a.no-style {
 {
     display: none;
 }
-
-/*.glyphicon-cog*/
-/*{*/
-/*    font-size: 0.9em;*/
-/*}*/
-
-/*.glyphicon-signal*/
-/*{*/
-/*    font-size: 0.8em;*/
-/*}*/
-
-/*.glyphicon-volume-up, .ion-battery-charging*/
-/*{*/
-/*    font-size: 1.2em;*/
-/*}*/
 
 .desktop
 {
@@ -142,7 +109,6 @@ a.no-style {
 
 #sidebar
 {
-    /*background-color: DarkMagenta;*/
     background-color: #660000;
     opacity: 0.95;
     width: 75px;
@@ -194,14 +160,10 @@ a.no-style {
     text-align: center;
     z-index: 2;
     background-color: transparent;
-    /*background-color: White;*/
-    /*opacity: 0.4;*/
-    /*background: rgba(255, 255, 255, 0.6);*/
     margin: 4px 7.5px;
     border-radius: 5px;
     background-repeat: no-repeat;
     background-position: center;
-    /*border: none !important;*/
     border: 1.5px solid rgba(255, 255, 255, 0.7) !important;
     box-shadow: none !important;
 }
@@ -255,7 +217,7 @@ a.no-style {
 }
 
 :full-screen
-{ /*pre-spec */
+{
     background: url("../assets/backgrounds/brack.jpg") no-repeat 50% 50% fixed;
     background-size: cover;
     -moz-background-size: cover;
@@ -266,7 +228,7 @@ a.no-style {
 }
 
 :fullscreen
-{ /* spec */
+{
     background: url("../assets/backgrounds/brack.jpg") no-repeat 50% 50% fixed;
     background-size: cover;
     -moz-background-size: cover;
