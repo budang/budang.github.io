@@ -434,7 +434,7 @@
         var text = game.add.text(0, game.camera.height / 3, "", {
             font: "129px TheMillionMileMan",
             fill: "#ffffff",
-            align: "center"
+            boundsAlignH: "center"
         });
         text.fixedToCamera = false;
         if(status === "win") {
