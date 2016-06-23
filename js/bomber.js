@@ -433,7 +433,7 @@
         clearAllTimeout();
         var style = {
             font: "129px TheMillionMileMan",
-            fill: "#White"
+            fill: "White"
         };
         if(status === "win") {
             musicLevelComplete.play();
