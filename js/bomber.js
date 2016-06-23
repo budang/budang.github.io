@@ -431,18 +431,19 @@
             game.sound.mute = false;
         
         clearAllTimeout();
-        var text = game.add.text(0, 0, "", {
+        var style = {
             font: "129px TheMillionMileMan",
-            fill: "#ffffff",
-            boundsAlignH: "center",
-            boundsAlignV: "middle"
-        });
-        text.fixedToCamera = false;
+            fill: "#White"
+        };
         if(status === "win") {
             musicLevelComplete.play();
+            var text = game.add.text(game.camera.width / 3, game.camera.height / 3, "", style);
+            text.fixedToCamera = false;
             text.setText("You Win");
         } else {
             musicDead.play();
+            var text = game.add.text(0, game.camera.height / 3, "", style);
+            text.fixedToCamera = false;
             text.setText("Game Over");        
         }
         setTimeout(function() {
