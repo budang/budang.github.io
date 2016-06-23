@@ -431,10 +431,11 @@
             game.sound.mute = false;
         
         clearAllTimeout();
-        var text = game.add.text(0, game.camera.height / 3, "", {
+        var text = game.add.text(0, 0, "", {
             font: "129px TheMillionMileMan",
             fill: "#ffffff",
-            boundsAlignH: "center"
+            boundsAlignH: "center",
+            boundsAlignV: "middle"
         });
         text.fixedToCamera = false;
         if(status === "win") {
