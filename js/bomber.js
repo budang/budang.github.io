@@ -432,14 +432,14 @@
         
         clearAllTimeout();
         var text = game.add.text(0, game.camera.height / 3, "", {
-            font: "129px Arial",
+            font: "129px TheMillionMileMan",
             fill: "#ffffff",
             align: "center"
         });
         text.fixedToCamera = false;
         if(status === "win") {
             musicLevelComplete.play();
-            text.setText("You win!!!!!!");
+            text.setText("You Win");
         } else {
             musicDead.play();
             text.setText("Game Over");        

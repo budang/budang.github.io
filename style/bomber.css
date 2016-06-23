@@ -14,17 +14,15 @@ h1, p
 h1
 {
     font-size: 80px;
-    /*margin-top: 20px*/
 }
 
 p
 {
     font-size: 24px;
-    /*top: 580px; right: 0; left: 0;*/
-    /*position: relative;*/
 }
 
-#game_window span {
+#game_window span
+{
     float: left;
     cursor: pointer !important;
     font-size: 24px;
