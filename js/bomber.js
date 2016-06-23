@@ -437,7 +437,7 @@
         };
         if(status === "win") {
             musicLevelComplete.play();
-            var text = game.add.text(game.camera.width / 10, game.camera.height / 3, "", style);
+            var text = game.add.text(game.camera.width / 9, game.camera.height / 3, "", style);
             text.fixedToCamera = false;
             text.setText("You Win");
         } else {
