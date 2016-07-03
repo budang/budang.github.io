@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $("#power").click(function() {
-        $("#shutdown").css("display", "block");
+        $("#shutdown").fadeIn("slow");
     });
 
     $("#restart, #quit").mouseenter(function() {
@@ -31,6 +31,6 @@ $(document).ready(function() {
     });*/
 
     $(".exit-shutdown").click(function() {
-		$("#shutdown").css("display", "none"); 
+		$("#shutdown").fadeOut("fast"); 
     });
 });
