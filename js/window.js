@@ -112,13 +112,15 @@ $(document).ready(function() {
 function openWindow(windId) {
     zindex++;
     windId = "#" + windId;
-    var css = { "display": "block", "position": "absolute", "z-index": zindex };
+    var css = { "position": "absolute", "z-index": zindex };
     
     if(!($(windId).hasClass("opened"))) {
         // open new window (with delay for flare)
         $("*").css("cursor", "progress");
         var rand = Math.floor(Math.random() * 600);
         setTimeout(function() {
+            $(windId).fadeIn("fast");
+
             $(windId).addClass("opened");
             $(windId).addClass("active");
             
@@ -139,6 +141,8 @@ function openWindow(windId) {
         }, rand);
     } else if(!$(windId).hasClass("active")) {
         // reactivate minimized window
+        $(windId).fadeIn("fast");
+        
         $(windId).addClass("active");
         $(windId).css(css);
     } else {
@@ -161,6 +165,7 @@ function bringForward(wind) {
 }
 
 function hideWindow(windId) {
-    $(windId).css("display", "none");
+    // $(windId).css("display", "none");
+    $(windId).fadeOut("fast");
     $(windId).removeClass("active");
 }
