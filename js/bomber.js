@@ -153,7 +153,7 @@
             endGame("lose");
 
         // check collisions
-        game.physics.arcade.collide(player, layer, function() { /*musicBump.play();*/ });
+        game.physics.arcade.collide(player, layer);
             
         for(var i = 0; i < baddieCounter; ++i)
             hitBaddie(Zombies[i]);
