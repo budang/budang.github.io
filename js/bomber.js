@@ -24,37 +24,28 @@
     var mute = true;
 
     for(var i = 0; i < baddieCounter; ++i)
-    {
         Zombies[i] = null;
-    }
     
     // note: graphics copyright 2015 Photon Storm Ltd
     function preload() {
-        game.load.tilemap('map', 'assets/map.json', null, Phaser.Tilemap.TILED_JSON);
-        game.load.image('tiles', 'assets/tiles.png');
-        this.load.image('bomb', 'assets/bomb.png');
-        game.load.spritesheet('baddie', 'assets/baddie.png', 32,32);
-        game.load.spritesheet('dude', 'assets/dude.png', 32, 48);
-        game.load.spritesheet('explosion', 'assets/explosion17.png', 64, 64);
-        game.load.audio('musicPN', 'assets/audio/-003-game-play-normal-.mp3');
-        game.load.audio('musicLC', 'assets/audio/-005-level-complete.mp3');
-        game.load.audio('musicDead', 'assets/audio/-009-dead.mp3');
-        game.load.audio('musicDead', 'assets/audio/-009-dead.mp3');
-        game.load.audio('musicBoom', 'assets/audio/bomb-03.mp3');
-        game.load.audio('musicSplat', 'assets/audio/splat.mp3');
-        game.load.audio('musicBump', 'assets/audio/bump-cut.mp3');
+        game.load.tilemap('map', 'assets/bomberguy/map.json', null, Phaser.Tilemap.TILED_JSON);
+        game.load.image('tiles', 'assets/bomberguy/tiles.png');
+        this.load.image('bomb', 'assets/bomberguy/bomb.png');
+        game.load.spritesheet('baddie', 'assets/bomberguy/baddie.png', 32,32);
+        game.load.spritesheet('dude', 'assets/bomberguy/dude.png', 32, 48);
+        game.load.spritesheet('explosion', 'assets/bomberguy/explosion17.png', 64, 64);
+        game.load.audio('musicPN', 'assets/bomberguy/audio/-003-game-play-normal-.mp3');
+        game.load.audio('musicLC', 'assets/bomberguy/audio/-005-level-complete.mp3');
+        game.load.audio('musicDead', 'assets/bomberguy/audio/-009-dead.mp3');
+        game.load.audio('musicDead', 'assets/bomberguy/audio/-009-dead.mp3');
+        game.load.audio('musicBoom', 'assets/bomberguy/audio/bomb-03.mp3');
+        game.load.audio('musicSplat', 'assets/bomberguy/audio/splat.mp3');
+        game.load.audio('musicBump', 'assets/bomberguy/audio/bump-cut.mp3');
     }
     
     function Zombie(sprite) {
         this.sprite = sprite
-        
-   
     }
-    
-    Zombie.prototype.Act = function() {
-        
-    }
-    
     
     function create() {
         map = game.add.tilemap('map');
@@ -62,15 +53,11 @@
         layer = map.createLayer('Tile Layer 1');
         map.setCollision(6, true, this.layer);
         
-        for(var i = 0; i < baddieCounter; ++i)
-        {
-            if(i < 3)
-            {
+        for(var i = 0; i < baddieCounter; ++i) {
+            if(i < 3) {
                 Zombies[i] = makeZombie(32*5.5, 32*rand(1, 14));
                 Zombies[i].body.velocity.x = speed2;
-            }
-            else
-            {
+            } else {
                 Zombies[i] = makeZombie(32*rand(4,18),32*4.5);
                 Zombies[i].body.velocity.y = (i == 4) ? -speed2 : speed2;
             }
@@ -121,9 +108,9 @@
     
     function rand(min, max) {
         var x = Math.floor(Math.random()*(max - min + 1) + min);
-        if(x % 2 === 0) {  x--; }
-        x += 0.5;
-        return x;
+        if(x % 2 === 0) 
+            x--;
+        return x + 0.5;
     }
     
     function makeZombie(px, py) {
@@ -200,15 +187,14 @@
     
     function anyZombiesAlive() {
         var answer = false;
-        for(var i = 0; i < baddieCounter; ++i)
+        for(var i = 0; i < baddieCounter; ++i) {
             if(Zombies[i].alive)
                 answer = true;
+        }
         return answer;
-        
     }
     
     function checkWin() {
-
         if(!anyZombiesAlive() && player.alive)
             endGame("win");
     }
@@ -295,46 +281,34 @@
         {
             var point = getTileCoord(Zombies[i]);
         
-            if(point.x===3 && i == 0){
+            if(point.x === 3 && i === 0) {
                 Zombies[i].animations.play('right');
                 Zombies[i].body.velocity.x = speed2;
-            }
-            if(point.x===15 && i == 0) {
+            } else if(point.x === 15 && i === 0) {
                 Zombies[i].animations.play('left');
                 Zombies[i].body.velocity.x = -speed2;
-            }
-            if(point.x===5 && i == 1){
+            } else if(point.x === 5 && i === 1) {
                 Zombies[i].animations.play('right');
                 Zombies[i].body.velocity.x = speed2;
-            }
-            if(point.x===18 && i == 1) {
+            } else if(point.x === 18 && i === 1) {
                 Zombies[i].animations.play('left');
                 Zombies[i].body.velocity.x = -speed2;
-            }
-            if(point.x===2 && i == 2){
+            } else if(point.x === 2 && i === 2) {
                 Zombies[i].animations.play('right');
                 Zombies[i].body.velocity.x = speed2;
-            }
-            if(point.x===9 && i == 2)
-            {
+            } else if(point.x === 9 && i === 2) {
                 Zombies[i].animations.play('left');
                 Zombies[i].body.velocity.x = -speed2;
-            }
-            if(point.y===3 && i == 3){
+            } else if(point.y === 3 && i === 3) {
                 Zombies[i].animations.play('right');
                 Zombies[i].body.velocity.y = speed2;
-            }
-            if(point.y===12 && i == 3)
-            {
+            } else if(point.y === 12 && i === 3) {
                 Zombies[i].animations.play('left');
                 Zombies[i].body.velocity.y = -speed2;
-            }
-            if(point.y===4 && i == 4){
+            } else if(point.y === 4 && i === 4) {
                 Zombies[i].animations.play('right');
                 Zombies[i].body.velocity.y = speed2;
-            }
-            if(point.y===11 && i == 4)
-            {
+            } else if(point.y === 11 && i === 4) {
                 Zombies[i].animations.play('left');
                 Zombies[i].body.velocity.y = -speed2;
             }
@@ -421,7 +395,6 @@
     function endGame(status) {
 
         game.input.keyboard.removeKeyCapture(Phaser.Keyboard.SPACEBAR);
-        
 
         musicPlayNormal.stop();
 
