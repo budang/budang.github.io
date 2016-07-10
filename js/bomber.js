@@ -83,8 +83,8 @@
         player.animations.add('left', [0, 1, 2, 3], 10, true);
         player.animations.add('right', [5, 6, 7, 8], 10, true);
         player.anchor.set(0.5);
-        player.scale.set(1, .66);    
-        game.physics.arcade.enable(player);    
+        player.scale.set(1, .66);
+        game.physics.arcade.enable(player);
         
         cursors = game.input.keyboard.createCursorKeys();
         spaceKey = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
@@ -94,14 +94,14 @@
                 var bomb = game.add.sprite(marker.x * 32 + 16, marker.y * 32 + 16, 'bomb', 0);
                 bomb.anchor.set(0.5);
                 bomb.scale.set(.40, .30);
-                setTimeout(function() {                
+                setTimeout(function() {
                     fallout(bomb);
                     setTimeout(function() {
                         fallout(bomb);
                     }, 25);
                     boom(bomb);
                     bomb.destroy();
-                }, 1000);        
+                }, 1000);
             }
         }, this);
     }
@@ -125,7 +125,7 @@
     
     function update() {
         $("#game_window").find(".exit, .min").click(function() {
-            if(!mute) {    
+            if(!mute) {
                 mute = true;
                 game.sound.mute = true;
                 $("#game-vol").removeClass("glyphicon-volume-up");
@@ -197,12 +197,12 @@
             endGame("win");
     }
     
-    function spriteEquals(sprite1, sprite2){
+    function spriteEquals(sprite1, sprite2) {
         return sprite1 === sprite2;
     }
     
-    function isAZombie(sprite){
-        for(var i = 0; i < baddieCounter; i++){
+    function isAZombie(sprite) {
+        for(var i = 0; i < baddieCounter; i++) {
             if(spriteEquals(sprite, Zombies[i]))
                 return true;
         }
@@ -230,7 +230,7 @@
         player.body.y = (marker.y * 32);
     }
     
-    function getTileCoord(o){
+    function getTileCoord(o) {
         var pz = new Phaser.Point();
         pz.x = game.math.snapToFloor(Math.floor(o.x), 32) / 32;
         pz.y = game.math.snapToFloor(Math.floor(o.y), 32) / 32;
@@ -238,45 +238,43 @@
     }
     
     //Pass this function a bomb!!!
-    function boom(b){
+    function boom(b) {
         musicBoom.play();
 
         var fireSprites = [];
         var x = getTileCoord(b).x;
         var y = getTileCoord(b).y;
         var hitTiles = [new Phaser.Point(x,y), new Phaser.Point(x+1,y), new Phaser.Point(x-1,y), new Phaser.Point(x,y+1),new Phaser.Point(x, y-1)];
-        for(var i = 0; i<5; ++i){
+        for(var i = 0; i<5; ++i) {
             fireSprites.push(game.add.sprite(hitTiles[i].x * 32 + 16, hitTiles[i].y * 32 + 16, 'explosion', 0));
             fireSprites[i].anchor.set(0.5);
-            fireSprites[i].scale.set(.40, .30);  
+            fireSprites[i].scale.set(.40, .30);
             fireSprites[i].animations.add('left',[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],10,true);
             fireSprites[i].animations.play('left');
         }
         
-        setTimeout(function(){
-            fireSprites.forEach(function(s){
+        setTimeout(function() {
+            fireSprites.forEach(function(s) {
                 s.destroy();
             });
         }, 2000);
     
         for(var x = 0; x < 5; x++) {
-            setTimeout(function(){
-                fireSprites.forEach(function(s){
+            setTimeout(function() {
+                fireSprites.forEach(function(s) {
                     fallout(b);
                 });
             }, x * 400);
-            setTimeout(function(){
-                fireSprites.forEach(function(s){
+            setTimeout(function() {
+                fireSprites.forEach(function(s) {
                     fallout(b);
                 });
             }, x * 400 + 200);
         }   
     }
-    
 
-    function AnimateZombie(){
-        for(var i = 0; i < baddieCounter; ++i)
-        {
+    function AnimateZombie() {
+        for(var i = 0; i < baddieCounter; ++i) {
             var point = getTileCoord(Zombies[i]);
         
             if(point.x === 3 && i === 0) {
@@ -310,7 +308,6 @@
                 Zombies[i].animations.play('left');
                 Zombies[i].body.velocity.y = -speed2;
             }
-
         }
     }
     
@@ -362,9 +359,9 @@
         if(current === opposites[direction]) {
             move(direction);
         } else {
-            turning = direction;        
+            turning = direction;
             turnPoint.x = marker.x*32 + 32/2;
-            turnPoint.y = marker.y*32 + 32/2;    
+            turnPoint.y = marker.y*32 + 32/2;
         }
     }
     
@@ -391,7 +388,6 @@
     }
     
     function endGame(status) {
-
         game.input.keyboard.removeKeyCapture(Phaser.Keyboard.SPACEBAR);
 
         musicPlayNormal.stop();
@@ -415,7 +411,7 @@
             musicDead.play();
             var text = game.add.text(0, game.camera.height / 3, "", style);
             text.fixedToCamera = false;
-            text.setText("Game Over");        
+            text.setText("Game Over");
         }
         setTimeout(function() {
             text.setText("");
