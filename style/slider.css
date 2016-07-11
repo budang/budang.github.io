@@ -61,3 +61,8 @@
     background: #000 url('https://dl.dropboxusercontent.com/u/65639888/image/next.png') no-repeat center;
     right: 0;
 }
+
+#next, #prev
+{
+    cursor: pointer !important;
+}
