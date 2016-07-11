@@ -42,12 +42,10 @@ $(document).ready(function() {
     }
 
     function slideTo(imageToGo) {
-        var direction;
-        var numOfImageToGo = Math.abs(imageToGo - currentImage);
-        
-        // slide left
-        direction = currentImage > imageToGo ? 1 : -1;
+        var direction = direction = currentImage > imageToGo ? 1 : -1;
+        var numOfImageToGo = Math.abs(imageToGo - currentImage);        
         currentPostion = -1 * currentImage * imageWidth;
+        
         var opts = {
             duration: 1000,
             delta: function(p) {
@@ -65,31 +63,25 @@ $(document).ready(function() {
     }
 
     function onClickPrev() {
-        toggleClickOff();
+        $("#prev, #next").off("click");
+        
         if(currentImage === 0) 
             slideTo(imageNumber - 1);
         else
             slideTo(currentImage - 1);
-        
     }
 
     function onClickNext() {
-        toggleClickOff();
+        $("#prev, #next").off("click");
+
         if(currentImage === imageNumber - 1) 
             slideTo(0);
         else
             slideTo(currentImage + 1);
-        
     }
 
     function toggleClickOn() {
-        $("#prev, #next").on("click");
-
         $("#prev").click(onClickPrev);
         $("#next").click(onClickNext);
-    }
-
-    function toggleClickOff() {
-        $("#prev, #next").off("click");
     }
 });
