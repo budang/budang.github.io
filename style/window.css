@@ -240,9 +240,10 @@ video
     left: 200px;
 }
 
-#resume
+.file-item
 {
     width: 80px;
+    float: left;
 }
 
 img.file
