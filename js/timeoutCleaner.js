@@ -1,4 +1,4 @@
-;(function () {
+(function () {
     window.timeouts = {},
     window.intervals = {},
     window.osetTimeout = window.setTimeout,

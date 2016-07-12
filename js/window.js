@@ -165,7 +165,6 @@ function bringForward(wind) {
 }
 
 function hideWindow(windId) {
-    // $(windId).css("display", "none");
     $(windId).fadeOut("fast");
     $(windId).removeClass("active");
 }

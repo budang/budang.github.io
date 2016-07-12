@@ -10,27 +10,6 @@ $(document).ready(function() {
         $("#time2").text(date.toLocaleTimeString("en-us", options));
         setTimeout(showTime, 60000);
     })();
-
-    // glyphicon interactions
-    /*$("#signal").click(function() {
-        if($(this).hasClass("glyphicon-signal")) {
-            $(this).removeClass("glyphicon-signal");
-            $(this).addClass("glyphicon-ban-circle");
-        } else {
-            $(this).removeClass("glyphicon-ban-circle");
-            $(this).addClass("glyphicon-signal");
-        }
-    }),*/
-   
-    /*$("#volume").click(function() {
-        if($(this).hasClass("glyphicon-volume-up")) {
-            $(this).removeClass("glyphicon-volume-up");
-            $(this).addClass("glyphicon-volume-off");
-        } else {
-            $(this).removeClass("glyphicon-volume-off");
-            $(this).addClass("glyphicon-volume-up");
-        }
-    }),*/
     
     $("#time").click(function() {
         $(this).css("display", "none");
