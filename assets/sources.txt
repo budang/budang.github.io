@@ -7,3 +7,5 @@ http://icons.iconarchive.com/icons/cornmanthe3rd/plex/128/System-folder-yellow-i
 http://cdn.flaticon.com/png/256/36003.png
 http://image.flaticon.com/icons/png/256/36/36152.png
 http://downloads.khinsider.com/game-soundtracks/album/bomberman-nes-
+https://dl.dropboxusercontent.com/u/65639888/image/prev.png
+https://dl.dropboxusercontent.com/u/65639888/image/next.png

@@ -44,12 +44,12 @@
 }
 
 #prev {
-    background: #000 url('https://dl.dropboxusercontent.com/u/65639888/image/prev.png') no-repeat center;
+    background: #000 url("../assets/slides/prev.png") no-repeat center;
     left: 0;
 }
 
 #next {
-    background: #000 url('https://dl.dropboxusercontent.com/u/65639888/image/next.png') no-repeat center;
+    background: #000 url("../assets/slides/next.png") no-repeat center;
     right: 0;
 }
 
