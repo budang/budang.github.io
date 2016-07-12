@@ -1,11 +1,9 @@
-body, div, h1, h2, h3, h4, h5, h6, p, ul, img
-{
+body, div, h1, h2, h3, h4, h5, h6, p, ul, img {
     margin: 0 0;
     padding: 0;
 }
 
-*
-{
+* {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -14,8 +12,7 @@ body, div, h1, h2, h3, h4, h5, h6, p, ul, img
     user-select: none;
 }
 
-body
-{
+body {
     background: url("../assets/backgrounds/brack.jpg") no-repeat 50% 50% fixed;
     background-size: cover;
     -moz-background-size: cover;
@@ -25,8 +22,7 @@ body
     overflow-y: hidden;
 }
 
-#loader
-{
+#loader {
     position: fixed;
     left: 0px;
     top: 0px;
@@ -37,8 +33,7 @@ body
     background-color: #f2f2f2;
 }
 
-#header
-{
+#header {
     position: relative;
     width: 100%;
     height: 22px;
@@ -53,20 +48,17 @@ body
     box-shadow: 0 1px 1px black;
 }
 
-#header p
-{
+#header p {
     margin: 2px 12px 0 12px;
     font-size: 14px;    
 }
 
-#tag
-{
+#tag {
     float: left;
     margin-top: 0 !important;
 }
 
-#tag > a
-{
+#tag > a {
     color: white;
     text-decoration: none;
 }
@@ -76,84 +68,71 @@ a.no-style {
     text-decoration: none;   
 }
 
-#status
-{
+#status {
     float: right;    
 }
 
-#status span
-{
+#status span {
     margin-left: 10px;
     cursor: pointer;
     float: right;
 }
 
-#time2
-{
+#time2 {
     display: none;
 }
 
-.desktop
-{
+.desktop {
     float: left;
     height: 100vh;
     position: absolute;
 }
 
-#background
-{
+#background {
     background-position: center center;
     background-size: 100%;
     width: 100vw;
 }
 
-#sidebar
-{
+#sidebar {
     background-color: #660000;
     opacity: 0.95;
     width: 75px;
     z-index: 99998;
 }
 
-#home
-{
+#home {
     background-image: url('../assets/icons/home.png');
     background-size: 53px 50px;
     margin-top: 10px;
 }
 
-#internet
-{
+#internet {
     background-image: url('../assets/icons/brow.png');
     background-size: 53px 53px;
 }
 
-#pictures
-{
+#pictures {
     background-image: url('../assets/icons/pic.png');
     background-size: 54px 54px;
 }
 
-#videos
-{
+#videos {
     background-image: url('../assets/icons/mov.png');
     background-size: 60px 52px;
 }
 
-#game
-{
+#game {
     background-image: url('../assets/icons/bguy.png');
     background-size: 49px 49px;
 }
 
-#folder
-{
+#folder {
     background-image: url('../assets/icons/fold.png');
     background-size: 52px 66px;
 }
 
-.square
-{
+.square {
     width: 60px;
     height: 60px;
     line-height: 60px;
@@ -168,8 +147,7 @@ a.no-style {
     box-shadow: none !important;
 }
 
-.square:nth-of-type(1)
-{
+.square:nth-of-type(1) {
     margin-top: 6px;
 }
 
@@ -177,14 +155,12 @@ a.no-style {
     opacity: 0.7;
 }
 
-.square img
-{
+.square img {
     width: 75%;
     vertical-align: middle;
 }
 
-:-webkit-full-screen
-{
+:-webkit-full-screen {
     background: url("../assets/backgrounds/brack.jpg") no-repeat 50% 50% fixed;
     background-size: cover;
     -moz-background-size: cover;
@@ -194,8 +170,7 @@ a.no-style {
     overflow-y: hidden;
 }
 
-:-moz-full-screen
-{
+:-moz-full-screen {
     background: url("../assets/backgrounds/brack.jpg") no-repeat 50% 50% fixed;
     background-size: cover;
     -moz-background-size: cover;
@@ -205,8 +180,7 @@ a.no-style {
     overflow-y: hidden;
 }
 
-:-ms-fullscreen
-{
+:-ms-fullscreen {
     background: url("../assets/backgrounds/brack.jpg") no-repeat 50% 50% fixed;
     background-size: cover;
     -moz-background-size: cover;
@@ -216,19 +190,7 @@ a.no-style {
     overflow-y: hidden;;
 }
 
-:full-screen
-{
-    background: url("../assets/backgrounds/brack.jpg") no-repeat 50% 50% fixed;
-    background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -webkit-background-size: cover;
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
-
-:fullscreen
-{
+:full-screen {
     background: url("../assets/backgrounds/brack.jpg") no-repeat 50% 50% fixed;
     background-size: cover;
     -moz-background-size: cover;

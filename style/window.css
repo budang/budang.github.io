@@ -1,24 +1,15 @@
-@font-face
-{
+@font-face {
     font-family: TheMillionMileMan;
     src: url('../assets/TheMillionMileMan.woff');
 }
 
-@font-face
-{
-    font-family: DollieScript;
-    src: url('../assets/DollieScript.woff');
-}
-
-.window
-{
+.window {
     display: none;
     border: 1px solid Black;
     border-radius: 5px;
 }
 
-.topbar
-{
+.topbar {
     border-radius: 5px 5px 0 0;
     width: 100%;
     height: 26px;
@@ -30,8 +21,7 @@
     background: linear-gradient(Gray, #303030);
 }
 
-.windnav
-{
+.windnav {
     margin-top: 3px;
     width: 20px;
     height: 20px;
@@ -45,24 +35,20 @@
     font-weight: bold;
 }
 
-.windnav:hover
-{
+.windnav:hover {
     opacity: 0.8;
 }
 
-.exit
-{
+.exit {
     margin-left: 5px;
     background-color: OrangeRed;
 }
 
-.min
-{
+.min {
     background-color: Gray;
 } 
 
-#home_window
-{
+#home_window {
     height: 500px;
     width: 600px;
     background-color: White;
@@ -71,8 +57,7 @@
     background-repeat: no-repeat;
 }
 
-#home_window h1
-{
+#home_window h1 {
     color: White;
     font-family: TheMillionMileMan;
     font-size: 55px;
@@ -81,8 +66,7 @@
     margin-top: 15px;
 }
 
-#home_window hr
-{
+#home_window hr {
     height: 1px;
     border: 0;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
@@ -90,8 +74,7 @@
     color: White;
 }
 
-#info
-{
+#info {
     width: 550px;
     height: 320px;
     margin-left: 25px;
@@ -100,8 +83,7 @@
     border: 1px dotted #DD4814;
 }
 
-#home_window p
-{
+#home_window p {
     color: White;
     text-align: left;
     font-family: Ubuntu;
@@ -111,8 +93,7 @@
     margin-top: 15px;
 }
 
-#internet_window
-{
+#internet_window {
     height: 450px;
     width: 560px;
     background-image: url("https://41.media.tumblr.com/52034a07cb604b7379560319251f80b2/tumblr_nec8y8JlIb1tij7i0o1_1280.jpg");
@@ -120,8 +101,7 @@
     background-repeat: no-repeat;
 }
 
-#internet_window h1
-{
+#internet_window h1 {
     font-family: TheMillionMileMan;
     font-size: 55px;
     font-weight: bold;
@@ -129,22 +109,19 @@
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-.browser-search
-{
+.browser-search {
     width: 85%;
     margin: auto;
 }
 
-#internet_window hr
-{
+#internet_window hr {
     height: 1px;
     border: 0;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
     width: 90%;
 }
 
-#internet_window p
-{
+#internet_window p {
     text-align: left;
     color: White;
     margin-bottom: 5px;
@@ -153,8 +130,7 @@
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-#shortcuts
-{
+#shortcuts {
     margin: auto;
     width: 85%;
 }
@@ -165,28 +141,24 @@
     margin: 15px;
 }
 
-.con_icon img
-{
+.con_icon img {
     width: 130px;
     height: 130px;
     cursor: pointer !important;
 }
 
-.con_icon img:hover
-{
+.con_icon img:hover {
     opacity: 0.8;
 }
 
-#pic_window
-{
+#pic_window {
     height: 420px;
     width: 562px;
     background-color: Black;
 }
 
 /*workaround for iframe dragging*/
-/*#cover
-{
+/*#cover {
     height: 90%;
     width: 100%;
     position: relative;
@@ -195,70 +167,60 @@
     left: 0;
 }*/
 
-video
-{
+video {
     width: 620px;
     height: 440px;
     position: relative;
 }
 
-#vid_window
-{
+#vid_window {
     height: 485px;
     width: 625px;
     background-color: Black;
     left: 200px;
 }
 
-#game_window
-{
+#game_window {
     height: 675px;
     width: 750px;
     background-color: Black;
     left: 200px;
 }
 
-#game_window h1
-{
+#game_window h1 {
     font-size: 50px;
     font-family: TheMillionMileMan;
     color: White;
 }
 
-#game_window p
-{
+#game_window p {
     margin-top: 10px;
     font-family: TheMillionMileMan;
     color: White;
 }
 
-#folder_window
-{
+#folder_window {
     height: 470px;
     width: 620px;
     background-color: White;
     left: 200px;
 }
 
-.file-item
-{
+.file-item {
     width: 80px;
     float: left;
 }
 
-img.file
-{
+img.file {
     width: 75px;
     height: 75px;
 }
 
-p.file
-{
+p.file {
     color: Black;
     font-size: 18px;
 }
 
-p.file, img.file
-{
+p.file, img.file {
     cursor: pointer !important;
 }
