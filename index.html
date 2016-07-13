@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css">
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu">
+
     <link rel="stylesheet" type="text/css" href="style/main.css">
     <link rel="stylesheet" type="text/css" href="style/shutdown.css">
     <link rel="stylesheet" type="text/css" href="style/slider.css">
@@ -22,30 +23,15 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/phaser/2.3.0/phaser.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
     <script type="text/javascript" src="js/bomber.js"></script>
     <script type="text/javascript" src="js/slider.js"></script>
     <script type="text/javascript" src="js/window.js"></script>
     <script type="text/javascript" src="js/header.js"></script>
     <script type="text/javascript" src="js/shutdown.js"></script>
     <script type="text/javascript" src="js/timeoutCleaner.js"></script>
-    
-    <script>
-        $(window).load(function() {
-            $("#loader").fadeOut("slow");
-        });
-
-        $(document).ready(function() {
-            $("#searchbar").keypress(function(e) {
-                var search = $("#searchbar").val();
-                if(e.which === 13 && search) {
-                    var url = "https://www.google.com/search?q=" + encodeURIComponent(search);
-                    var win = window.open(url, '_blank');
-                    win.focus();
-                    $("#searchbar").val("");
-                } 
-            });
-        });
-    </script>
+    <script type="text/javascript" src="js/loader.js"></script>
+    <script type="text/javascript" src="js/internet.js"></script>
 
 </head>
 
