@@ -7,18 +7,20 @@ $(document).ready(function() {
     };
     (function showTime() {
         var date = new Date(Date());
-        $("#time2").text(date.toLocaleTimeString("en-us", options));
+        $("#timestamp").text(date.toLocaleTimeString("en-us", options));
         setTimeout(showTime, 60000);
     })();
     
-    $("#time").click(function() {
-        $(this).css("display", "none");
-        $("#time2").css("display", "inline");
+    $("#clock").click(function() {
+        $(this).fadeOut("fast", function() {
+            $("#timestamp").fadeIn();
+        });
     }),
     
-    $("#time2").click(function() {
-        $(this).css("display", "none");
-        $("#time").css("display", "inline");
+    $("#timestamp").click(function() {
+        $(this).fadeOut("fast", function() {
+            $("#clock").fadeIn();
+        });
     }),
    
     (function() {
