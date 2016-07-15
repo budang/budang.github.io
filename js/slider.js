@@ -32,7 +32,7 @@ $(document).ready(function() {
     }
 
     function slideTo(imageToGo) {
-        var direction = direction = currentImage > imageToGo ? 1 : -1;
+        var direction = currentImage > imageToGo ? 1 : -1;
         var numOfImageToGo = Math.abs(imageToGo - currentImage);        
         currentPostion = -1 * currentImage * imageWidth;
         
