@@ -1,23 +1,13 @@
 $(document).ready(function() {
-    var ul, li_items;
     var imageNumber, imageWidth;
     var currentPostion = 0, currentImage = 0;
 
     // init
     (function() {
-        ul = $("#image_slider")[0];
-        $(ul).css("left", "0");
-        li_items = $(ul).children();
-        imageNumber = li_items.length;
-        imageWidth = li_items[0].children[0].clientWidth;
-        
-        if(imageWidth === 0) {
-            // imageWidth = 420;
-            imageWidth = $(".slide_img")[0];
-            imageWidth = window.getComputedStyle(imageWidth);
-            imageWidth = parseInt(imageWidth.getPropertyValue("width"));
-        }
-        $(ul).css("width", parseInt(imageWidth * imageNumber) + "px");
+        $("#image_slider").css("left", "0");
+        imageNumber = $("#image_slider").children().length;
+        imageWidth = $(".slide_img").width();
+        $("#image_slider").css("width", imageWidth * imageNumber + "px");
         
         toggleClickOn();
     })();
@@ -52,7 +42,7 @@ $(document).ready(function() {
                 return p;
             },
             step: function(delta) {
-                $(ul).css("left", parseInt(currentPostion + direction * delta * imageWidth * numOfImageToGo) + 'px');
+                 $("#image_slider").css("left", parseInt(currentPostion + direction * delta * imageWidth * numOfImageToGo) + 'px');
             },
             callback: function() {
                 currentImage = imageToGo;
