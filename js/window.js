@@ -9,55 +9,55 @@ var relations = {
     "home": {
         "windId": "home_window",
         "dims": {
-            "initHeight": "",
-            "initWidth": "",    
-            "prevHeight": "",
-            "prevWidth": ""
+            "initHeight": "600px",
+            "initWidth": "500px",    
+            "prevHeight": "600px",
+            "prevWidth": "500px"
         },
     },
     "internet": {
         "windId": "internet_window",
         "dims": {
-            "initHeight": "",
-            "initWidth": "",    
-            "prevHeight": "",
-            "prevWidth": ""
+            "initHeight": "450px",
+            "initWidth": "560px",    
+            "prevHeight": "450px",
+            "prevWidth": "560px"
         },
     },
     "pictures": {
         "windId": "pic_window",
         "dims": {
-            "initHeight": 340,
-            "initWidth": 420,    
-            "prevHeight": 340,
-            "prevWidth": 420
+            "initHeight": "340px",
+            "initWidth": "420px",    
+            "prevHeight": "340px",
+            "prevWidth": "420px"
         },
     },
     "videos": {
         "windId": "vid_window",
         "dims": {
-            "initHeight": 485,
-            "initWidth": 625,    
-            "prevHeight": 485,
-            "prevWidth": 625
+            "initHeight": "485px",
+            "initWidth": "625px",    
+            "prevHeight": "485px",
+            "prevWidth": "625px"
         },
     },
     "game": {
         "windId": "game_window",
         "dims": {
-            "initHeight": 675,
-            "initWidth": 750,    
-            "prevHeight": 675,
-            "prevWidth": 750
+            "initHeight": "675px",
+            "initWidth": "750px",    
+            "prevHeight": "675px",
+            "prevWidth": "750px"
         },
     },
     "folder": {
         "windId": "folder_window",
         "dims": {
-            "initHeight": 470,
-            "initWidth": 620,    
-            "prevHeight": 470,
-            "prevWidth": 620
+            "initHeight": "470px",
+            "initWidth": "620px",    
+            "prevHeight": "470px",
+            "prevWidth": "620px"
         },
     }
 }
@@ -68,21 +68,20 @@ $(document).ready(function() {
     
     $(".resize-drag").draggable({
         drag: function(event) { bringForward(this); },
-        handle: ".topbar"/*,
-        containment: "window"*/
+        handle: ".topbar"
     });
     
-    // for(var squareId in relations) {
-    //     var windId = "#" + relations[squareId].windId;
-    //     $(windId).resizable({
-    //         resize: function(event) {
-    //             relations[squareId].dims.prevHeight = $(this).height();
-    //             relations[squareId].dims.prevWidth = $(this).width();
-    //         },
-    //         minHeight: relations[squareId].dims.initHeight,
-    //         minWidth: relations[squareId].dims.initWidth
-    //     })
-    // }
+    /*for(var squareId in relations) {
+        var windId = "#" + relations[squareId].windId;
+        $(windId).resizable({
+            resize: function(event) {
+                relations[squareId].dims.prevHeight = $(this).height();
+                relations[squareId].dims.prevWidth = $(this).width();
+            },
+            minHeight: relations[squareId].dims.initHeight,
+            minWidth: relations[squareId].dims.initWidth
+        })
+    }*/
     
     $(".square").click(function() {
         $(this).css("background-color", "rgba(255, 255, 255, 0.7)");
@@ -124,9 +123,9 @@ function openWindow(windId) {
             $(windId).addClass("opened");
             $(windId).addClass("active");
             
-            if(windId === "#pic_window") {
+            if(windId === "#pic_window")
                 $("#image_slider").css({"width": "5460px"});
-            }
+            
             
             // randomize position only when opened the first time    
             if($(windId).hasClass("new")) {
@@ -155,13 +154,14 @@ function openWindow(windId) {
 
 function getSquare(windId) {
     for(var squareId in relations) {
-        if(relations[squareId].windId === windId) { return squareId; }
+        if(relations[squareId].windId === windId) 
+            return squareId;
     }
 }
 
 function bringForward(wind) {
     zindex++;
-    $(wind).css({"z-index": zindex});
+    $(wind).css("z-index", zindex);
 }
 
 function hideWindow(windId) {

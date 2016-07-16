@@ -24,25 +24,25 @@ $(document).ready(function() {
             var delta = opts.delta(progress);
             opts.step(delta);
             
-            if(progress === 1){
+            if(progress === 1) {
                 clearInterval(id);
                 opts.callback();
             }
-        }, opts.delay || 17);
+        }, 0);
     }
 
     function slideTo(imageToGo) {
         var direction = currentImage > imageToGo ? 1 : -1;
         var numOfImageToGo = Math.abs(imageToGo - currentImage);        
         currentPostion = -1 * currentImage * imageWidth;
-        
+
         var opts = {
             duration: 1000,
             delta: function(p) {
                 return p;
             },
-            step: function(delta) {
-                 $("#image_slider").css("left", parseInt(currentPostion + direction * delta * imageWidth * numOfImageToGo) + 'px');
+            step: function(delta) {        
+                $("#image_slider").css("left", parseInt(currentPostion + direction * delta * imageWidth * numOfImageToGo) + 'px');
             },
             callback: function() {
                 currentImage = imageToGo;
