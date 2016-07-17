@@ -98,7 +98,3 @@
 	color: white;
 	cursor: pointer !important;
 }
-
-.wait-cursor {
-	cursor: wait !important;
-}

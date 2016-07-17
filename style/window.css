@@ -51,10 +51,8 @@
 #home_window {
     height: 500px;
     width: 600px;
-    background-color: White;
     background-image: url("https://41.media.tumblr.com/6a25b2034c70961271992feb3ee03b4d/tumblr_nfvcvzAAhr1tij7i0o1_540.jpg");
     background-size: 100% 100%;
-    background-repeat: no-repeat;
 }
 
 #home_window h1 {
@@ -69,9 +67,8 @@
 #home_window hr {
     height: 1px;
     border: 0;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));
     width: 90%;
-    color: White;
 }
 
 #info {
@@ -98,7 +95,6 @@
     width: 560px;
     background-image: url("https://41.media.tumblr.com/52034a07cb604b7379560319251f80b2/tumblr_nec8y8JlIb1tij7i0o1_1280.jpg");
     background-size: 100% 100%;
-    background-repeat: no-repeat;
 }
 
 #internet_window h1 {
@@ -117,7 +113,7 @@
 #internet_window hr {
     height: 1px;
     border: 0;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));
     width: 90%;
 }
 
@@ -156,16 +152,6 @@
     width: 562px;
     background-color: Black;
 }
-
-/*workaround for iframe dragging*/
-/*#cover {
-    height: 90%;
-    width: 100%;
-    position: relative;
-    margin-top: -415px;
-    top: 0;
-    left: 0;
-}*/
 
 video {
     width: 620px;
