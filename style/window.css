@@ -147,7 +147,7 @@
     opacity: 0.8;
 }
 
-#pic_window {
+#pictures_window {
     height: 420px;
     width: 562px;
     background-color: Black;
@@ -159,7 +159,7 @@ video {
     position: relative;
 }
 
-#vid_window {
+#videos_window {
     height: 485px;
     width: 625px;
     background-color: Black;

@@ -4,65 +4,6 @@ var screenWidth = window.innerWidth;
 var maxHeight = Math.floor(screenHeight / 3), minHeight = Math.floor(screenHeight / 5);
 var maxWidth = Math.floor(screenWidth / 3), minWidth = Math.floor(screenWidth / 5);
 
-// square-window mappings
-var relations = {
-    "home": {
-        "windId": "home_window",
-        "dims": {
-            "initHeight": "600px",
-            "initWidth": "500px",    
-            "prevHeight": "600px",
-            "prevWidth": "500px"
-        },
-    },
-    "internet": {
-        "windId": "internet_window",
-        "dims": {
-            "initHeight": "450px",
-            "initWidth": "560px",    
-            "prevHeight": "450px",
-            "prevWidth": "560px"
-        },
-    },
-    "pictures": {
-        "windId": "pic_window",
-        "dims": {
-            "initHeight": "340px",
-            "initWidth": "420px",    
-            "prevHeight": "340px",
-            "prevWidth": "420px"
-        },
-    },
-    "videos": {
-        "windId": "vid_window",
-        "dims": {
-            "initHeight": "485px",
-            "initWidth": "625px",    
-            "prevHeight": "485px",
-            "prevWidth": "625px"
-        },
-    },
-    "game": {
-        "windId": "game_window",
-        "dims": {
-            "initHeight": "675px",
-            "initWidth": "750px",    
-            "prevHeight": "675px",
-            "prevWidth": "750px"
-        },
-    },
-    "folder": {
-        "windId": "folder_window",
-        "dims": {
-            "initHeight": "470px",
-            "initWidth": "620px",    
-            "prevHeight": "470px",
-            "prevWidth": "620px"
-        },
-    }
-}
-
-var tempId;
 $(document).ready(function() {
     $(".window").addClass("new");
     
@@ -72,33 +13,32 @@ $(document).ready(function() {
     });
     
     /*for(var squareId in relations) {
-        var windId = "#" + relations[squareId].windId;
-        $(windId).resizable({
+        var windowId = "#" + squareId + "_window";
+        $(windowId).resizable({
             resize: function(event) {
-                relations[squareId].dims.prevHeight = $(this).height();
-                relations[squareId].dims.prevWidth = $(this).width();
+                
             },
-            minHeight: relations[squareId].dims.initHeight,
-            minWidth: relations[squareId].dims.initWidth
+            minHeight: '',
+            minWidth: ''
         })
     }*/
     
     $(".square").click(function() {
         $(this).css("background-color", "rgba(255, 255, 255, 0.7)");
         var squareId = $(this).attr("id");
-        openWindow(relations[squareId].windId);
+        openWindow(squareId + "_window");
     });
     
     $(".exit, .min").click(function() {
-        var windId = "#" + $(this).parent().parent().attr("id");
-        hideWindow(windId);
+        var windowId = "#" + $(this).parent().parent().attr("id");
+        hideWindow(windowId);
         if($(this).hasClass("exit")) {
-            if(windId === "#vid_window") { $("#vid").get(0).load(); }
-            $(windId).removeClass("opened");
-            var squareId = "#" + getSquare($(windId).attr("id"));
+            if(windowId === "#videos_window") { $("#vid").get(0).load(); }
+            $(windowId).removeClass("opened");
+            var squareId = "#" + getSquare($(windowId).attr("id"));
             $(squareId).css("background-color", "transparent");
         } else { // min
-            var squareId = "#" + getSquare($(windId).attr("id"));
+            var squareId = "#" + getSquare($(windowId).attr("id"));
             $(squareId).css("background-color", "rgba(192, 192, 192, 0.5)");
         }
     });
@@ -108,63 +48,60 @@ $(document).ready(function() {
     });
 });
 
-function openWindow(windId) {
+function openWindow(windowId) {
     zindex++;
-    windId = "#" + windId;
+    windowId = "#" + windowId;
     var css = { "position": "absolute", "z-index": zindex };
     
-    if(!($(windId).hasClass("opened"))) {
+    if(!($(windowId).hasClass("opened"))) {
         // open new window (with delay for flare)
         $("*").css("cursor", "progress");
         var rand = Math.floor(Math.random() * 600);
         setTimeout(function() {
-            $(windId).fadeIn("fast");
+            $(windowId).fadeIn("fast");
 
-            $(windId).addClass("opened");
-            $(windId).addClass("active");
+            $(windowId).addClass("opened");
+            $(windowId).addClass("active");
             
-            if(windId === "#pic_window")
+            if(windowId === "#pictures_window")
                 $("#image_slider").css({"width": "5460px"});
             
             
             // randomize position only when opened the first time    
-            if($(windId).hasClass("new")) {
+            if($(windowId).hasClass("new")) {
                 css.top = Math.floor(Math.random() * (screen.height / 3 - minHeight + 1)) + minHeight / 2 + "px";
                 css.left = Math.floor(Math.random() * (screen.width / 2 - minWidth + 1)) + minWidth / 2 + "px";
-                $(windId).removeClass("new");
+                $(windowId).removeClass("new");
             }
         
-            $(windId).css(css);
+            $(windowId).css(css);
             $("*").css("cursor", "default");
             $("#status span, p.file, img.file, a, .square").css("cursor", "pointer");
         }, rand);
-    } else if(!$(windId).hasClass("active")) {
+    } else if(!$(windowId).hasClass("active")) {
         // reactivate minimized window
-        $(windId).fadeIn("fast");
+        $(windowId).fadeIn("fast");
         
-        $(windId).addClass("active");
-        $(windId).css(css);
+        $(windowId).addClass("active");
+        $(windowId).css(css);
     } else {
         // minimize active window
-        var squareId = "#" + getSquare($(windId).attr("id"));
+        var squareId = "#" + getSquare($(windowId).attr("id"));
         $(squareId).css("background-color", "rgba(192, 192, 192, 0.5)");
-        hideWindow(windId);
+        hideWindow(windowId);
     }
 }
 
-function getSquare(windId) {
-    for(var squareId in relations) {
-        if(relations[squareId].windId === windId) 
-            return squareId;
-    }
+function getSquare(windowId) {
+    return windowId.match(/[^_]*/i)[0];
 }
 
-function bringForward(wind) {
-    zindex++;
-    $(wind).css("z-index", zindex);
+function bringForward(window) {
+    $(window).css("z-index", ++zindex);
 }
 
-function hideWindow(windId) {
-    $(windId).fadeOut("fast");
-    $(windId).removeClass("active");
+function hideWindow(windowId) {
+    $(windowId).fadeOut("fast", function() {
+        $(windowId).removeClass("active");
+    });
 }
