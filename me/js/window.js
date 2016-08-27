@@ -49,9 +49,8 @@ $(document).ready(function() {
 });
 
 function openWindow(windowId) {
-    zindex++;
     windowId = "#" + windowId;
-    var css = { "position": "absolute", "z-index": zindex };
+    var css = { "position": "absolute", "z-index": ++zindex };
     
     if(!($(windowId).hasClass("opened"))) {
         // open new window (with delay for flare)
