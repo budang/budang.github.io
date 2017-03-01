@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Pokémon Stuff</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body>
+<article id="main">
+
+	<header>
+		<h1 id="main-title"><a href="https://github.com/Armienn/pokemon#pok%C3%A9mon-stuff">Pokémon Stuff</a></h1>
+		<h4 id="sub-title" style="display: none;">Pokémon</h4>
+		<nav>
+			<ul>
+				<li id="nav-all" class="active" style="font-size: 1.5rem; padding-bottom: 0.2rem;">⊖</li>
+				<li id="nav-custom" class="inactive" style="font-size: 1.3rem;">☷</li>
+				<ul id="nav-mine" style="display: none;">|
+					<li id="nav-all-mine" class="inactive">Unknown's Pokémon</li>
+					<li id="nav-breedables" class="inactive">Breedables</li>
+				</ul>
+				<ul id="nav-inventory" style="display: none;">|
+				</ul>
+				<ul id="nav-looking-for" style="display: none;">|
+				</ul>
+				<li style="margin-left:2rem;">
+					<span class="active" id="mode-table">▤</span>
+					<span class="inactive" id="mode-grid">▦</span>
+				</li>
+				<li>
+					<span class="active" id="mode-night">☽</span>
+					<span class="inactive" id="mode-day">☀</span>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<section>
+		<ul id="custom-pokemon-section" style="display: none;">
+			<label>
+				Custom Pokémon:
+			</label>
+			<textarea id="custom-pokemon" style="height: 14rem; width: 32rem;"></textarea>
+			<button id="custom-pokemon-update">Update</button>
+		</ul>
+		<ul>
+		<ul id="filter-adder" style="display: inline-table;">
+			<ul id="filter-list">
+			</ul>
+		</ul>
+		<ul id="custom-adder" style="display: inline-table;">
+			<li id="custom-sort">
+			</li>
+		</ul>
+		</ul>
+		<ul id="current-filter-list">
+		</ul>
+	</section>
+
+	<table cellspacing="0" cellpadding="0" style="margin: 1rem;">
+		<thead>
+		</thead>
+		<tbody id="pokemon-info-base">
+			<tr id="pokemon-info-row" style="display: none; background-color: transparent; cursor: initial;">
+				<td>
+
+					<section id="pokemon-info" class="hidden-info">
+						<h2 id="name-header"></h2>
+						<p id="description-header"></p>
+						<section>
+							
+							<section id="image-section">
+								
+							</section>
+
+							<section id="info-section">
+								<table cellspacing="0" cellpadding="0">
+									<thead>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+							</section>
+
+							<section id="info-b-section">
+								<table cellspacing="0" cellpadding="0">
+									<thead>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+							</section>
+
+							<section>
+								<table cellspacing="0" cellpadding="0">
+									<thead>
+									</thead>
+									<tbody id="defenses-section">
+									</tbody>
+								</table>
+							</section>
+
+							<section id="stat-section">
+								<table cellspacing="0" cellpadding="0">
+									<thead>
+									</thead>
+									<tbody>
+									</tbody>
+								</table>
+							</section>
+
+							<section>
+								<table cellspacing="0" cellpadding="0">
+									<thead>
+									</thead>
+									<tbody id="family-section">
+									</tbody>
+								</table>
+							</section>
+
+						</section>
+						<h3 id="moves-header">Moves ▶</h3>
+						<section id="moves-section" class="hidden-moves">
+							<table id="moves-level" cellspacing="0" cellpadding="0">
+								<thead>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+							<table id="moves-evolution" cellspacing="0" cellpadding="0">
+								<thead>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+							<table id="moves-egg" cellspacing="0" cellpadding="0">
+								<thead>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+							<table id="moves-tm" cellspacing="0" cellpadding="0">
+								<thead>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+							<table id="moves-tutor" cellspacing="0" cellpadding="0">
+								<thead>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</section>
+						<h3 id="close-header">◬</h3>
+					</section>
+
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+	<section>
+		<table id="pokemon-list" cellspacing="0" cellpadding="0">
+			<thead>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+		<ul id="pokemon-grid">
+		</ul>
+	</section>
+
+	<footer>
+		Design and code © Armienn, 2017. Pokémon © Nintendo / Game Freak, 1995-2017. Thanks to Michiel Sikma for sprites and to richi3f for inspiration.
+	</footer>
+
+	<div id="copy" style="display: none;">
+		<div id="table-info">
+			<h1>Ctrl+A to select everything, Ctrl+C to copy</h1>
+			<textarea id="pokemon-copy-table"></textarea>
+		</div>
+	</div>
+
+	<div id="loading">
+        <img src="static/pokeball-white.png">
+	</div>
+
+</article>
+<script src="static/header-layout.js"></script>
+<script src="static/info-layout.js"></script>
+<script src="static/table-layout.js"></script>
+<script src="static/pokemon.js"></script>
+<script src="static/sheet-loading.js"></script>
+<script src="static/setup.js"></script>
+
+</body>
+</html>

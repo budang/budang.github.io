@@ -1,0 +1,378 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, main, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    vertical-align:baseline;
+    list-style-type: none;
+    font-weight: unset;
+    border: none;
+}
+
+article{
+    width: 100vw;
+    height: 100vh;
+    overflow:auto;
+    overflow-x: hidden;
+}
+
+section,header {
+    width: calc(100% - 2rem);
+    padding: 1rem 1rem 0rem 1rem;
+}
+
+section section {
+    padding: 0rem 1rem 0rem 1rem;
+}
+
+h1{
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+h2{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem 0rem 1rem 0rem;
+}
+
+h3{
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem 0rem 1rem 0rem;
+}
+
+h4{
+    font-weight: bold;
+    text-align: center;
+}
+
+p{
+    text-align: center;
+    margin: 0.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+footer {
+    padding: 1rem;
+    font-size: 0.8rem;
+}
+
+th, li{
+    vertical-align: middle;
+}
+
+#filter-list, #filter-individual-list {
+    display: inline-block;
+}
+
+#current-filter-list li {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    margin: 0 0.5rem 0.5rem 0.5rem;
+    cursor: pointer;
+}
+
+.close-mark{
+    font-weight: bold;
+    width: 1.5rem;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 1.5rem;
+    margin-left: 0.3rem;
+    border-radius: 3px;
+    color: #c80000;
+}
+
+#pokemon-list {
+    width: 100%;
+}
+
+#pokemon-list tr {
+    height: 2rem;
+    cursor: pointer;
+}
+#pokemon-list tr:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+#pokemon-grid li {
+    display: inline-table;
+    padding: 0;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    cursor: pointer;
+}
+#pokemon-grid li:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+li {
+    display: inline-block;
+    padding: 0.5rem;
+}
+
+ul {
+    text-align: center;
+}
+
+.even{
+    background-color: rgba(180, 180, 180, 0.2);
+}
+.odd{
+    background-color: rgba(80, 80, 80, 0.2);
+}
+
+input, select, textarea {
+    border: none;
+    padding: 0.3rem;
+    margin: 0 0.3rem 0 0.5rem;
+}
+
+button{
+    border: none;
+    padding: 0.2rem;
+    margin: 0 0.3rem;
+    cursor: pointer;
+}
+
+nav ul li{
+    display: inline-block;
+    font-weight: bold;
+}
+nav ul ul{
+    display: inline-block;
+}
+
+.active{
+    color: rgba(255, 255, 255, 1);
+}
+
+.inactive{
+    color: rgba(50, 50, 50, 0.5);
+}
+
+nav li{
+    padding: 0 0.5rem;
+    cursor: pointer;
+}
+
+#mode-table, #mode-grid {
+    font-size: 2rem;
+    font-weight: initial;
+}
+
+#mode-night, #mode-day {
+    font-size: 1.2rem;
+}
+
+#pokemon-info{
+    width: calc(100vw - 3rem);
+    overflow: hidden;
+    padding: 0;
+    background-color: rgba(128, 128, 128, 0.1);
+}
+.hidden-info {
+    max-height: 0;
+    transition: max-height 0.5s ease;
+}
+.shown-info {
+    max-height: 25rem;
+    transition: max-height 1s ease;
+}
+
+#pokemon-info section section {
+    float: left;
+    width: auto;
+    height: 14rem;
+}
+#pokemon-info tr:hover {
+    background-color: transparent;
+    cursor: default;
+}
+
+#pokemon-info th {
+    text-align: right;
+    color: #888;
+}
+
+#pokemon-info td{
+    padding: 0.5rem;
+}
+
+#defenses-section td{
+    padding-bottom: 0.05rem;
+    padding-top: 0.18rem;
+    text-align: center;
+}
+
+#defenses-section tr{
+    height: 1.33rem;
+}
+
+#moves-header, #close-header {
+    width: 100%;
+    display: table;
+    text-align: center;
+    cursor: pointer;
+    padding: 0.5rem 0;
+}
+
+#moves-header:hover, #close-header:hover {
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+#moves-section {
+    text-align: center;
+    overflow: hidden;
+}
+
+#moves-section table {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+#moves-section th {
+    text-align: center;
+}
+.hidden-moves {
+    max-height: 0;
+    transition: max-height 0.5s ease;
+}
+.shown-moves {
+    max-height: 1000rem;
+    transition: max-height 0.5s ease;
+}
+
+.stat-bar{
+    float: left;
+    height: 1rem;
+}
+
+.base-bar{
+    background-color: #00ae00;
+}
+
+.iv-bar{
+    background-color: yellow;
+    border-left: 1px solid black;
+}
+
+.ev-bar{
+    background-color: orange;
+    border-left: 1px solid black;
+}
+
+.negative-nature{
+    color: #2ab9b9;
+}
+
+.positive-nature{
+    color: #d66;
+}
+
+#pokemon-grid .got{
+    background-color: rgba(68, 255, 48, 0.35);
+}
+#pokemon-grid .got:hover{
+    background-color: rgba(68, 255, 48, 0.5);
+}
+
+#pokemon-list .got-even{
+    background-color: rgba(68, 255, 48, 0.35);
+}
+#pokemon-list .got-even:hover{
+    background-color: rgba(68, 255, 48, 0.5);
+}
+
+#pokemon-list .got-odd{
+    background-color: rgba(50, 174, 37, 0.35)
+}
+#pokemon-list .got-odd:hover{
+    background-color: rgba(68, 255, 48, 0.5);
+}
+
+#loading {
+    position:fixed;
+    top:0;left:0;
+    z-index:3000;
+    height:100%;
+    width:100%;
+    background-color:#c00;
+}
+#loading img{
+    width:48px; height:48px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin:-24px 0 0 -24px;
+    -webkit-transition:opacity .2s;
+    transition:opacity .2s;
+    -webkit-animation-duration:.8s;
+    animation-duration:.8s;
+    -webkit-animation-name:spin;
+    animation-name:spin;
+    -webkit-animation-iteration-count:infinite;
+    animation-iteration-count:infinite;
+    -webkit-animation-timing-function:ease-in-out;
+    animation-timing-function:ease-in-out
+}
+@-webkit-keyframes spin{
+    0%{
+        -webkit-transform:rotate(0deg); }
+    100%{
+        -webkit-transform:rotate(360deg); } }
+@keyframes spin{
+    0%{
+        -webkit-transform:rotate(0deg);
+        transform:rotate(0deg); }
+    100%{
+        -webkit-transform:rotate(360deg);
+        transform:rotate(360deg); } }
+
+#copy {
+    position:fixed;
+    top:0;left:0;
+    z-index:3000;
+    height:100%;
+    width:100%;
+    background-color:rgba(0,0,0,0.75);
+}
+
+#table-info {
+    width: 40rem;
+    height: 20rem;
+    padding: 0.5rem;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-left:-20rem;
+    margin-top:-10rem;
+}
+#table-info h1 {
+    font-size: 1rem;
+    margin: 0.5rem;
+}
+#table-info textarea {   
+    width: calc(100% - 1rem);
+    height: calc(100% - 1rem);
+}
