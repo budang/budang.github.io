@@ -138,8 +138,6 @@ var currentFilterList = document.getElementById("current-filter-list")
 var pokemonList = document.getElementById("pokemon-list")
 var pokemonGrid = document.getElementById("pokemon-grid")
 var pokemonInfo = document.getElementById("pokemon-info")
-// var modeTable = document.getElementById("mode-table")
-// var modeGrid = document.getElementById("mode-grid")
 var modeNight = document.getElementById("mode-night")
 var modeDay = document.getElementById("mode-day")
 
@@ -163,8 +161,6 @@ var movesTutorTable = document.getElementById("moves-tutor")
 var closeElement = document.getElementById("close-header")
 var pokeInfoRow = document.getElementById("pokemon-info-row")
 
-// var navAll = document.getElementById("nav-all")
-// var navCustom = document.getElementById("nav-custom")
 var navMine = document.getElementById("nav-mine")
 var navAllMine = document.getElementById("nav-all-mine")
 var navBreedables = document.getElementById("nav-breedables")
@@ -179,16 +175,10 @@ var loadedThings = {
 var externalInventory = {shouldLoad: false, loaded: false}
 
 var spreadsheetId
-// var scriptUrl
 if(window.location.search){
 	var argument = window.location.search.substring(1)
-	// if(argument.startsWith("script:")){
-	// 	externalInventory.shouldLoad = true
-	// 	scriptUrl = argument.substring(7)
-	// } else {
-		externalInventory.shouldLoad = true
-		spreadsheetId = argument
-	// }
+	externalInventory.shouldLoad = true
+	spreadsheetId = argument
 }
 var destination = false
 if(window.location.hash)
@@ -217,7 +207,6 @@ var customPokemon = function(){
 
 setColors(...colors.night)
 setupDayNightButtons()
-// setupTableGridButtons()
 closeElement.onclick = ()=>{selectPokemon()}
 movesHeader.onclick = toggleShowMoves
 

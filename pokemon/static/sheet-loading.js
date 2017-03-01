@@ -102,8 +102,6 @@ function deselectTabs(){
 		navLookingFor.children[i].className = "inactive"
 	for(var i=0; i<navInventory.children.length; i++)
 		navInventory.children[i].className = "inactive"
-	// navAll.className = "inactive"
-	// navCustom.className = "inactive"
 	navAllMine.className = "inactive"
 	navBreedables.className = "inactive"
 	document.getElementById("custom-pokemon-section").style.display = "none"
