@@ -11,18 +11,18 @@ function setupDayNightButtons(){
 		modeDay.className = "active"
 	}
 }
-function setupTableGridButtons(){
-	modeTable.onclick = function(){
-		switchModeTo("table")
-		modeTable.className = "active"
-		modeGrid.className = "inactive"
-	}
-	modeGrid.onclick = function(){
-		switchModeTo("grid")
-		modeTable.className = "inactive"
-		modeGrid.className = "active"
-	}
-}
+// function setupTableGridButtons(){
+// 	modeTable.onclick = function(){
+// 		switchModeTo("table")
+// 		modeTable.className = "active"
+// 		modeGrid.className = "inactive"
+// 	}
+// 	modeGrid.onclick = function(){
+// 		switchModeTo("grid")
+// 		modeTable.className = "inactive"
+// 		modeGrid.className = "active"
+// 	}
+// }
 function update(){
 	nextPoke = 0
 	nextLimit = 50
@@ -45,33 +45,33 @@ function tryLoad(){
 	if(!isBasicLoaded())
 		return
 	if(externalInventory.shouldLoad && !externalInventory.loaded){
-		if(scriptUrl){
-			request("https://" + scriptUrl, function(script){
-				addScriptTab(script)
-				externalInventory.loaded = true
-				tryLoad()
-			})
-		}
+		// if(scriptUrl){
+		// 	request("https://" + scriptUrl, function(script){
+		// 		addScriptTab(script)
+		// 		externalInventory.loaded = true
+		// 		tryLoad()
+		// 	})
+		// }
 		return
 	}
 	if(loaded)
 		return
 	loaded = true
 	
-	navAll.onclick = function(){
-		deselectTabs()
-		navAll.className = "active"
-		infoMove()
-		update()
-	}
-	navCustom.onclick = function(){
-		deselectTabs()
-		navCustom.className = "active"
-		document.getElementById("custom-pokemon-section").style.display = ""
-		selectedTab = "custom"
-		infoMove()
-		update()
-	}
+	// navAll.onclick = function(){
+	// 	deselectTabs()
+	// 	navAll.className = "active"
+	// 	infoMove()
+	// 	update()
+	// }
+	// navCustom.onclick = function(){
+	// 	deselectTabs()
+	// 	navCustom.className = "active"
+	// 	document.getElementById("custom-pokemon-section").style.display = ""
+	// 	selectedTab = "custom"
+	// 	infoMove()
+	// 	update()
+	// }
 	document.getElementById("custom-pokemon").value = `var list = []
 var pokemon = getPokemonFrom({name:"Beedrill",form:"Mega"})
 pokemon.ivs = {hp:31,atk:31,def:31,spa:31,spd:31,spe:31}
@@ -118,8 +118,8 @@ return list`
 	addFilterChooser("Add filter:")
 	addSortingChooser("Sort by:")
 	addSearch("Search")
-	if(externalInventory.shouldLoad)
-		addCompletionModeSwitcher()
+	// if(externalInventory.shouldLoad)
+	// 	addCompletionModeSwitcher()
 		
 	document.getElementById("copy").onclick = function(){
 		document.getElementById("copy").style.display = "none"
@@ -154,32 +154,32 @@ function setColors(backgroundColor, textColor, headerColor){
 	document.getElementsByTagName("header")[0].style.backgroundColor = headerColor
 }
 
-function addCompletionModeSwitcher(){
-	var element = newTag("li", filterAdder, true)
-	element.innerHTML = "Normal mode"
-	element.style.cursor = "pointer"
-	element.onclick = function(){
-		switch(completionMode){
-			case "normal":
-				completionMode = "families"
-				element.innerHTML = "Completion: Families"
-			break
-			case "families":
-				completionMode = "pokemons"
-				element.innerHTML = "Completion: Pokemons"
-			break
-			case "pokemons":
-				completionMode = "forms"
-				element.innerHTML = "Completion: Forms"
-			break
-			case "forms":
-				completionMode = "normal"
-				element.innerHTML = "Normal mode"
-			break
-		}
-		update()
-	}
-}
+// function addCompletionModeSwitcher(){
+// 	var element = newTag("li", filterAdder, true)
+// 	element.innerHTML = "Normal mode"
+// 	element.style.cursor = "pointer"
+// 	element.onclick = function(){
+// 		switch(completionMode){
+// 			case "normal":
+// 				completionMode = "families"
+// 				element.innerHTML = "Completion: Families"
+// 			break
+// 			case "families":
+// 				completionMode = "pokemons"
+// 				element.innerHTML = "Completion: Pokemons"
+// 			break
+// 			case "pokemons":
+// 				completionMode = "forms"
+// 				element.innerHTML = "Completion: Forms"
+// 			break
+// 			case "forms":
+// 				completionMode = "normal"
+// 				element.innerHTML = "Normal mode"
+// 			break
+// 		}
+// 		update()
+// 	}
+// }
 
 function addSearch(label){
 	var filterElement = newTag("li", filterAdder, true)
