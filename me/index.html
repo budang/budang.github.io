@@ -50,8 +50,8 @@
             </p>
         </div>
         <div id="sidebar" class="desktop">
-            <button class="square" id="home"></button>
-            <!--<button class="square" id="about"></button>-->
+            <!-- <button class="square" id="home"></button> -->
+            <button class="square" id="about"></button>
             <button class="square" id="internet"></button>
             <button class="square" id="pictures"></button>
             <button class="square" id="videos"></button>
@@ -59,7 +59,16 @@
             <button class="square" id="folder"></button>        
         </div>
 	    <div id="background" class="desktop">
-	        <div id="home_window" class="resize-drag window">
+	        <!--
+            <div id="home_window" class="resize-drag window">
+	            <div class="topbar">
+                    <button class="exit windnav">x</button>
+                    <button class="max windnav">+</button>
+                    <button class="min windnav">-</button>
+                </div>
+	        </div>
+            -->
+            <div id="about_window" class="resize-drag window">
 	            <div class="topbar">
                     <button class="exit windnav">x</button>
                     <!--<button class="max windnav">+</button>-->
@@ -71,26 +80,15 @@
                     <div id="info">
                         <p>
                             > UT Class of 2018, BSCS & MSIS<br>
-                            > Undergraduate Research Assistant<br>
                             > Front-end and Node.js developer<br>
                             > Crowdsourcing and HCI researcher<br>
+                            > Machine learning dabbler<br>
                             > Work in progress... Press F11! :-)<br>
                             > _
                         </p>
                     </div>
                 </div>
 	        </div>
-	        <!--
-            <div id="about_window" class="resize-drag window">
-	            <div class="topbar">
-                    <span href="" class="exit">[x]</span>
-                    <span href="">[-]</span>
-                    <span href="" class="max">[+]</span>
-                    <span href="">[x]</span>
-                    <span href="" class="min">[-]</span>
-                </div>
-	        </div>
-            -->
 	        <div id="internet_window" class="resize-drag window">
 	            <div class="topbar">
                     <button class="exit windnav">x</button>
@@ -201,7 +199,7 @@
             <div class="container outer">
                 <div class="container inner">
                     <div class="innerinner">
-                        <p>Thanks for visiting, I hope you enjoyed it! Are you sure want to refresh this page?</p>
+                        <p>Thanks for visiting! Would you like to refresh this page?</p>
                         <div id="shutdown-menu">
                             <div id="restart" class="pointer-cursor">
                                 <span class="glyphicon glyphicon-repeat"></span>
