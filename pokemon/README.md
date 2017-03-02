@@ -1,3 +1,5 @@
+[Original by Armienn.](https://github.com/Armienn/pokemon) Original README reproduced below.
+
 # Pokémon Stuff
 
 A site for browsing Pokémon (either all Pokémon, Pokémon stored in Google Sheets, or Pokémon loaded via custom javascript) featuring easy-to-use advanced filtering and searching
