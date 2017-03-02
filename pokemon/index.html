@@ -5,17 +5,16 @@
     <meta charset="utf-8" />
     <script type="text/javascript">
     	var base = "http://budang.github.io/pokemon/?"
-    	var myId2 = "1cLbnlLmjiE4STShF2Q5E_vy3G3G_xHtOwuLenUYy3Zg#2"
-    	var myId3 = "1cLbnlLmjiE4STShF2Q5E_vy3G3G_xHtOwuLenUYy3Zg#3"
-	var myId4 = "1cLbnlLmjiE4STShF2Q5E_vy3G3G_xHtOwuLenUYy3Zg#4"
+    	var myId = "1cLbnlLmjiE4STShF2Q5E_vy3G3G_xHtOwuLenUYy3Zg"
     	
-    	var spreadsheetId
+    	var spreadsheetId, hash
 	if(window.location.search){
 		spreadsheetId = window.location.search.substring(1)
+		hash = window.location.hash.substring(1)
 	}
 	    
-	if(!spreadsheetId || (spreadsheetId != myId2 && spreadsheetId != myId3 && spreadsheetId != myId4)){
-		window.location.replace(base + myId2)
+	if(!spreadsheetId || spreadsheetId != myId || !hash || !(hash >= 2 && hash <= 4)){
+		window.location.replace(base + myId + "#2")
 	}
     </script>
     <title>Pokémon Stuff</title>
