@@ -46,7 +46,7 @@
 
 .min {
     background-color: Gray;
-} 
+}
 
 #about_window {
     height: 500px;
@@ -73,7 +73,7 @@
 
 #info {
     width: 550px;
-    height: 320px;
+    height: 330px;
     margin-left: 25px;
     background-color: #5E2750;
     opacity: 0.9;
